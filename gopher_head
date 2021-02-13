@@ -1,0 +1,27 @@
+i      _       _            _         _____           _ _           	/
+i     | |     | |          | |       / ____|         | | |          	/
+i     | | ___ | |__  _ __  | |      | |  __  ___   __| | | ___  ___ 	/
+i _   | |/ _ \| '_ \| '_ \ | |      | | |_ |/ _ \ / _` | |/ _ \/ _ \	/
+i| |__| | (_) | | | | | | || |___ _ | |__| | (_) | (_| | |  __/  __/	/
+i \____/ \___/|_| |_|_| |_||_____(_) \_____|\___/ \__,_|_|\___|\___|	/
+                                                                       
+                                                                                                        
+iJohn L. Godlee	/
+=echo "`TZ=UTC date -R`"
+
+
+iThis is a copy of my personal website where I keep my CV,	/
+ia collection of recipes, and a blog/phlog.	/
+ 
+hhttps://johngodlee.github.io	URL:https://johngodlee.github.io
+hgemini://republic.circumlunar.space:1965/~johngodlee/	URL:gemini://republic.circumlunar.space:1965/~johngodlee/
+
+0Contact details	contact.txt
+0PGP public key	johngodlee.asc
+0CV	cv.txt
+
+1Recipes	recipes
+0Library	books.txt
+
+i==== Phlog =======================================================	/
+
