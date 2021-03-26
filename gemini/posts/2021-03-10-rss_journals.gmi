@@ -6,7 +6,7 @@ AUTHOR: John L. Godlee
 
 I use RSS to keep up with most of the media I consume, using newsboat[1] as an RSS reader. I use it for news, blogs, podcasts, youtube. I also get email alerts from a few scientific journals on their new articles, to try and keep up with current research.
 
-=>  1:
+=> https://newsboat.org/ 1: https://newsboat.org/
 
 Only recently did I realise	that I could use RSS to keep up with scientific journals as well. Most peer-reviewed journals have RSS feeds which list their newest articles.
 

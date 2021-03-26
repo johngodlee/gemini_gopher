@@ -9,7 +9,7 @@ newsboat as an RSS reader. I use it for news, blogs, podcasts,
 youtube. I also get email alerts from a few scientific journals on
 their new articles, to try and keep up with current research.
 
-  [newsboat]:
+  [newsboat]: https://newsboat.org/
 
 Only recently did I realise that I could use RSS to keep up with
 scientific journals as well. Most peer-reviewed journals have RSS

@@ -137,26 +137,7 @@ though, ideally you need a very heavy duty plastic bag that can be
 tied tightly, to keep the flour dry and to stop it from leaking. I
 make flatbreads even when I’m at home, normally for breakfast
 alongside eggs, they’re quick and easy to make with minimal
-equipment. I’ve put together the recipe below as a guide, but when
-I’m making these for myself I generally just estimate how much of
-each ingredient, and adjust if needed:
-
-    # Flatbread recipe 
-
-    ## Ingredients
-    * 300 g plain white flour
-    * 2 tsp salt
-    * 2 tbsp oil
-    * 2 tsp paprika
-    * 75 ml water
-
-    ## Method
-    1. Combine flour, salt, paprika in a mixing bowl 
-    2. Mix in oil, then water, Mix together until a smooth dough is formed, add more water if needed
-    3. Knead for a couple of minutes to make sure everything is thoroughly mixed
-    4. Divide dough into two small bowls. Roll dough ball to ~3-4 mm thick. Tin cans or bottles make good rolling pins
-    5. Heat frying pan to high heat
-    6. Dry fry the flatbread until browned, flip to brown both sides
+equipment.
 
 Another excellenet use for flour is to make pancakes! Contrary to
 popular belief they can also be made without eggs if you add a bit

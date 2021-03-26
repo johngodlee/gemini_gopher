@@ -14,7 +14,6 @@
 
 ## Misc
 
-=> bean_and_cheese_taquitos.gmi Bean and Cheese Taquitos
 => bittercress_pesto.gmi Hairy bittercress pesto
 => chickpea_carrot_crepes.gmi Chickpea and carrot crepes
 => chilaquiles.gmi Chilaquiles
@@ -33,7 +32,6 @@
 => chocolate_chip_cookies.gmi Vegan Chocolate Chip Cookies
 => elderberry_pie.gmi Elderberry Pie
 => gajar_burfi.gmi Gajar burfi
-=> microwave_brownie.gmi Microwave Brownie
 => peanut_butter_cups.gmi Chocolate peanut butter cups
 => savoury_scones.gmi Savoury Scones
 => stewed_rhubarb.gmi Stewed Rhubarb
@@ -51,35 +49,28 @@
 => naan.gmi Naan 
 => olive_rosemary_foccacia.gmi Olive Rosemary Foccacia
 => potato_bread.gmi Potato bread
-=> rosemary_sweet_potato_rolls.gmi Rosemary Sweet Potato Rolls
-=> stuffing_rolls.gmi Stuffing Rolls
 
 ## Mains
 
-=> basil_sage_gnocchi.gmi Basil Sage Gnocchi
 => bean_chilli.gmi Bean chilli
-=> beans_with_charred_chillies.gmi Beans with charred chillies
 => braised_leeks.gmi Braised Leeks
-=> chicken_pesto_dumpling_stew.gmi Pesto chicken stew with cheesy dumplings
 => chickpea_pastry_slice.gmi Chickpea pastry slice
 => chorizo_and_white_bean_stew.gmi Chorizo and white bean stew
 => cornish_pasties.gmi Cornish Pasties
 => courgette_cheese_quiche.gmi Courgette Cheese Quiche
 => eggs_benedict.gmi Eggs Benedict
 => gnocchi.gmi Vegan Gnocchi
-=> hasselback_potatoes.gmi Hasselback potatoes
 => lentil_wellington.gmi Lentil wellington 
 => mushroom_chilli.gmi Mushroom chilli
 => mushroom_fricassee.gmi Mushroom fricassee
 => mushroom_pithivier.gmi Mushroom Pithivier
-=> nut_roast.gmi Nut Roast - Morna Brown 
+=> nut_roast.gmi Nut Roast
 => pasta_with_vodka_and_sausage.gmi Pasta with vodka and sausage
 => pheasant_casserole.gmi Pheasant casserole
 => potato_leek_pies.gmi Potato and Leek Mini Pies
 => rabbit_stew.gmi Rabbit Stew
 => refried_beans.gmi Refried beans
 => spinach_feta_oregano_filo_pie.gmi Spinach, feta, oregano filo pie
-=> squash_gnocchi.gmi Squash Gnocchi
 => stewed_red_cabbage.gmi Stewed red cabbage
 => tofu_scramble.gmi Tofu scramble
 => vegetarian_haggis.gmi Vegetarian Haggis
@@ -87,7 +78,5 @@
 
 ## Pizza
 
-=> mini_calzones.gmi Mini Calzones
 => pinello_dough.gmi Frank Pinello pizza dough
 => pizza_margherita.gmi Pizza Margherita
-=> vegan_lahmajun.gmi Vegan Lahmajun

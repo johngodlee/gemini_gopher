@@ -3,6 +3,9 @@
 => ../ Back to home
 
 
+=> 2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
+=> 2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
+=> 2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
 => 2021-03-10-rss_journals.gmi 2021-03-10 - RSS feeds for scientific journals
 => 2021-03-01-azure.gmi 2021-03-01 - Microsoft Azure Translator API call in R
 => 2021-02-25-recensus.gmi 2021-02-25 - LaTeX plot census forms

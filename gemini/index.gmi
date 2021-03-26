@@ -23,6 +23,9 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
+=> posts/2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
+=> posts/2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
 => posts/2021-03-10-rss_journals.gmi 2021-03-10 - RSS feeds for scientific journals
 => posts/2021-03-01-azure.gmi 2021-03-01 - Microsoft Azure Translator API call in R
 => posts/2021-02-25-recensus.gmi 2021-02-25 - LaTeX plot census forms
@@ -30,9 +33,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-02-15-repeat.gmi 2021-02-15 - Dynamic lists from user-added choices within repeats and groups, in ODK
 => posts/2021-02-05-odk.gmi 2021-02-05 - What XLSForm+ODK cannot do 
 => posts/2021-01-25-playfair.gmi 2021-01-25 - Playfair cipher in R
-=> posts/2021-01-15-grass.gmi 2021-01-15 - Estimating grassy volume from terrestrial LiDAR
-=> posts/2021-01-05-shopping_list.gmi 2021-01-05 - Pandoc LaTeX shopping list template
-=> posts/2021-01-01-rugosity.gmi 2021-01-01 - Estimating canopy rugosity from terrestrial LiDAR
 
 => ./posts Archive	
 

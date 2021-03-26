@@ -42,26 +42,7 @@ Along the same lines, having a bit of whisky or some other spirit alcohol is a g
 
 If I could have fresh bread in the field every day I would. Bread is incredibly versatile, a good source of carbohydrates, filling, and generally tasty, though that one might be purely an opinion. Unfortunately though, bread is quite perishable unless it is frozen. Some types of bread last longer, tortilla wraps in sealed plastic for instance can last for many weeks, provided they aren't kept in full sunlight.
 
-In some places, bread isn't actually that common as a staple food. In these places, if I can, I make flatbreads using whatever sort of flour I can get hold of. Flour isn't easy to transport either though, ideally you need a very heavy duty plastic bag that can be tied tightly, to keep the flour dry and to stop it from leaking. I make flatbreads even when I'm at home, normally for breakfast alongside eggs, they're quick and easy to make with minimal equipment. I've put together the recipe below as a guide, but when I'm making these for myself I generally just estimate how much of each ingredient, and adjust if needed:
-
-```
-# Flatbread recipe 
-
-## Ingredients
-* 300 g plain white flour
-* 2 tsp salt
-* 2 tbsp oil
-* 2 tsp paprika
-* 75 ml water
-
-## Method
-1. Combine flour, salt, paprika in a mixing bowl 
-2. Mix in oil, then water, Mix together until a smooth dough is formed, add more water if needed
-3. Knead for a couple of minutes to make sure everything is thoroughly mixed
-4. Divide dough into two small bowls. Roll dough ball to ~3-4 mm thick. Tin cans or bottles make good rolling pins
-5. Heat frying pan to high heat
-6. Dry fry the flatbread until browned, flip to brown both sides
-```
+In some places, bread isn't actually that common as a staple food. In these places, if I can, I make flatbreads using whatever sort of flour I can get hold of. Flour isn't easy to transport either though, ideally you need a very heavy duty plastic bag that can be tied tightly, to keep the flour dry and to stop it from leaking. I make flatbreads even when I'm at home, normally for breakfast alongside eggs, they're quick and easy to make with minimal equipment.
 
 Another excellenet use for flour is to make pancakes! Contrary to popular belief they can also be made without eggs if you add a bit of vegetable oil, or even a bit of peanut butter. Pancakes are a good food for a relaxed day off breakfast, because they actually take quite a long time to make with a single pan
 
