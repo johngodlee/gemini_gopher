@@ -25,6 +25,7 @@ hgemini://republic.circumlunar.space:1965/~johngodlee/	URL:gemini://republic.cir
 
 i==== Phlog =======================================================	/
 
+02021-03-30 - Modelling stem diameter class distribution with Weibull	posts/2021-03-30-weibull.txt
 02021-03-25 - Planting 10 acres of woodland	posts/2021-03-25-planting.txt
 02021-03-20 - Splitting a large woodland survey plot into 1 ha subdiv	posts/2021-03-20-split.txt
 02021-03-15 - Fixing a stool	posts/2021-03-15-stool.txt
@@ -34,7 +35,6 @@ i==== Phlog =======================================================	/
 02021-01-20 - Making sense of the ODK ecosystem	posts/2021-02-20-xforms.txt
 02021-02-15 - Dynamic lists from user-added choices within repeats an	posts/2021-02-15-repeat.txt
 02021-02-05 - What XLSForm+ODK cannot do	posts/2021-02-05-odk.txt
-02021-01-25 - Playfair cipher in R	posts/2021-01-25-playfair.txt
 
 1Archive	posts
 

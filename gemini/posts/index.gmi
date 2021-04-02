@@ -3,6 +3,7 @@
 => ../ Back to home
 
 
+=> 2021-03-30-weibull.gmi 2021-03-30 - Modelling stem diameter class distribution with Weibull distributions
 => 2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
 => 2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
 => 2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
@@ -191,3 +192,4 @@
 => 2017-08-20-congo.gmi 2017-08-20 - Fire experiments in the Congo
 => 2017-08-14-bash-prompt.gmi 2017-08-14 - Constructing a Useful Bash Prompt
 => 2017-07-20-ranger-rifle-conf-mac.gmi 2017-07-20 - Configuring Ranger, a File Manager for macOS, with rifle.conf
+=> 2017-02-10-panel.gmi 2017-02-10 - Interpretation panel at Roslin Glen

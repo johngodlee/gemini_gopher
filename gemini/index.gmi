@@ -23,6 +23,7 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-03-30-weibull.gmi 2021-03-30 - Modelling stem diameter class distribution with Weibull distributions
 => posts/2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
 => posts/2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
 => posts/2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
@@ -32,7 +33,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-02-20-xforms.gmi 2021-01-20 - Making sense of the ODK ecosystem
 => posts/2021-02-15-repeat.gmi 2021-02-15 - Dynamic lists from user-added choices within repeats and groups, in ODK
 => posts/2021-02-05-odk.gmi 2021-02-05 - What XLSForm+ODK cannot do 
-=> posts/2021-01-25-playfair.gmi 2021-01-25 - Playfair cipher in R
 
 => ./posts Archive	
 
