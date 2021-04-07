@@ -70,6 +70,7 @@
 => potato_leek_pies.gmi Potato and Leek Mini Pies
 => rabbit_stew.gmi Rabbit Stew
 => refried_beans.gmi Refried beans
+=> spiced_chickpeas.gmi Spiced chickpeas 
 => spinach_feta_oregano_filo_pie.gmi Spinach, feta, oregano filo pie
 => stewed_red_cabbage.gmi Stewed red cabbage
 => tofu_scramble.gmi Tofu scramble

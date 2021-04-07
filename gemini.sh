@@ -122,6 +122,15 @@ for i in $dir_list; do
 	done
 done
 
-scp gemini/index.gmi contact.gmi cv.txt johngodlee.asc johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
+# CV
+pandoc -f markdown -t plain -o gemini/cv.txt ~/git_proj/johngodlee.github.io/cv.md
+
+# Link CV to gophermap
+cv="# John L. Godlee - Curriculum Vitae"
+
+sed -i -e "1i$cv\n\n" gemini/cv.txt
+sed -i -e '4,5d' gemini/cv.txt
+
+scp gemini/index.gmi contact.gmi gemini/cv.txt johngodlee.asc johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
 scp -r gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
 scp -r gemini/recipes johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini

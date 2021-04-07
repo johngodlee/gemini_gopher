@@ -19,10 +19,10 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => ./cv.txt CV
 
 => ./recipes Recipes	
-=> ./books.txt Library	
 
 # Phlog 
 
+=> posts/2021-04-05-flatbreads.gmi 2021-04-05 - Flatbreads
 => posts/2021-03-30-weibull.gmi 2021-03-30 - Modelling stem diameter class distribution with Weibull distributions
 => posts/2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
 => posts/2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
@@ -32,7 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-02-25-recensus.gmi 2021-02-25 - LaTeX plot census forms
 => posts/2021-02-20-xforms.gmi 2021-01-20 - Making sense of the ODK ecosystem
 => posts/2021-02-15-repeat.gmi 2021-02-15 - Dynamic lists from user-added choices within repeats and groups, in ODK
-=> posts/2021-02-05-odk.gmi 2021-02-05 - What XLSForm+ODK cannot do 
 
 => ./posts Archive	
 

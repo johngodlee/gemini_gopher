@@ -127,12 +127,22 @@ for i in $dir_list; do
 	done
 done
 
+# CV
+pandoc -f markdown -t plain -o gopher/cv.txt ~/git_proj/johngodlee.github.io/cv.md
+
+# Link CV to gophermap
+cv="John L. Godlee - Curriculum Vitae"
+cv_lo=$(echo "$cv" | sed 's/./=/g')
+
+sed -i -e "1i$cv\n$cv_lo\n" gopher/cv.txt
+sed -i -e '4,5d' gopher/cv.txt
+
 # Set file permissions, world read, nonexecutable
 find gopher/posts/ -type f -print0 | xargs -0 chmod 644
 find gopher/recipes/ -type f -print0 | xargs -0 chmod 644
 find . -name 'gophermap' -print0 | xargs -0 chmod 644
 find . -type d -print0 | xargs -0 chmod 755
 
-scp gopher/gophermap contact.txt cv.txt books.txt johngodlee.asc johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
+scp gopher/gophermap contact.txt gopher/cv.txt johngodlee.asc johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
 scp -r gopher/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
 scp -r gopher/recipes johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher

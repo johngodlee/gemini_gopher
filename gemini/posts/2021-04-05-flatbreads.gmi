@@ -1,0 +1,66 @@
+# Flatbreads
+
+DATE: 2021-04-05
+AUTHOR: John L. Godlee
+
+
+I tried to make flatbreads for the first time at secondary school in food tech class, when I was about 13. We were doing a module on world bread and each student had to pick a culture / country, learn about their bread, and cook some examples. I chose India as my case study and tried to create Thepla. Thepla[1] is a Gujarati bread made usually with yoghurt, ghee, wheat flour, fenugreek and green chillies. I remember the breads I made turned out quite stodgy and greasy, probably because the pan wasn't hot enough.
+
+=> https://en.wikipedia.org/wiki/Thepla 1: https://en.wikipedia.org/wiki/Thepla
+
+Now I make flatbreads frequently in all sorts of guises. Here I'm defining flatbreads as any bread which is much wider than it is tall. Basically anything that isn't a loaf or roll of some kind. The most generic flatbread I make uses plain flour, vegetable oil, salt and water. It is dry fried in a very hot pan. I make these flatbreads to serve with eggs for breakfast, as wraps for lunch, or to pair with a stew for supper. The recipe I use varies a bit depending on the exact type of bread that I want, but roughly it is:
+
+Ingredients
+
+* 150 g plain flour
+* 60 ml water
+* 2 tbsp oil
+* 0.75 tsp salt
+
+Method
+
+1. Mix all the dry ingredients together thoroughly in a bowl.
+2. Mix in more or less water bit by bit with a wooden spoon or paddle until the dough forms a cohesive, supple, non-sticky ball
+3. Knead on a lightly floured work surface until the dough isn't shaggy and sticky.
+4. Divide the dough into four and shape into balls.
+5. Flatten the balls to form a disc.
+6. Roll the balls out on a very lightly flowered surface until they are about 1-2 mm thick.
+7. Heat a shallow thin-bottomed pan until it is almost smoking.
+8. Fry each bread until bubbles start to form on the surface, then flip and fry the other side until lightly browned, with darker patches where the bubbles are.
+9. Stack the breads and possibly cover with a towel to steam them for a couple of minutes.
+
+=> https://johngodlee.github.io/img/flatbreads/dough.png Dough
+
+=> https://johngodlee.github.io/img/flatbreads/bubbles.png Bubbles just before flipping
+
+=> https://johngodlee.github.io/img/flatbreads/flip.png Browned surface just after flipping
+
+=> https://johngodlee.github.io/img/flatbreads/stack.png Stacked flatbreads to keep them steamy
+
+Tips and variations
+
+* If I want to make the bread thinner I add more oil. Adding a lot of oil can make the bread flakey.
+* If I want the bread to be more fluffy, which is nice for sopping up a stew, I add some baking powder and roll a bit thicker.
+* I've found that if I leave the dough to rest for 10 minutes before rolling it becomes much more pliable. This allows me to make the breads thinner and use less flour, more like tortillas.
+* A good pan is key. I use a large shallow aluminium pan which I've seasoned over many years to build up a non-stick layer of black carbon and oil. I would avoid pans with a teflon or similar non-stick surface. They often can't handle getting so hot and can impart an unpleasant flavour to the bread.
+* Basic additions to these flat breads include: * dried green herbs like fenugreek or oregano * olive oil instead of vegetable oil * nigella seeds (onion seeds) * finely minced garlic
+* Adding yoghurt to the dough makes the resulting bread much more chewy and stretchy, which makes it perfect for wraps which resemble gyros[2]. Make sure to reduce the amount of water.
+* Leavened flatbreads similar to naan are nice if you have more time available. use the above recipe but add 1 tsp dried yeast, knead for 5-10 minutes, then leave to prove for an hour or more before rolling out. Proving overnight in the fridge gives the bread a nice tangy flavour. Then cook in a hot pan as with the normal recipe.
+* Make thin breads and add a bit of margerine, ghee, butter, or vegetable oil to the pan to make something that resembles an Indian parotta[3]. Make sure to pick an oil with a high smoke point.
+
+=> https://johngodlee.github.io/img/flatbreads/pan.png Aluminium pan
+
+=> https://en.wikipedia.org/wiki/Gyro_(food) 2: https://en.wikipedia.org/wiki/Gyro_(food)
+=> https://en.wikipedia.org/wiki/Parotta 3: https://en.wikipedia.org/wiki/Parotta
+
+=> https://johngodlee.github.io/img/flatbreads/parotta.png A parotta style fltabread, fried in foamy butter
+
+As I've travelled for fieldwork or holidays I've encountered flatbreads in many other contexts which have influenced the way I make flatbreads. In southern Tanzania it's common to have oily chapatis[4] with bean stew for breakfast and lunch. Some people tear up the chapati and mix it through the beans. In northern Brazil I saw flatbreads made with cassava flour (manioca) called beiju[5], which have a grainy sticky texture a bit like a bao bun. They can be served sweet (e.g. with jam) or savoury (e.g. with pulled pork). In the southwest of the United States there are the wheat and corn tortillas. In central Europe and towards Turkey there are a multitude of flat breads like pide[6], bazlama[7], and manakish[8] which are often flavoured with fresh herbs or spread with meat and sharp cheese.
+
+=> https://en.wikipedia.org/wiki/Chapati 4: https://en.wikipedia.org/wiki/Chapati
+=> https://en.wikipedia.org/wiki/Mbeju 5: https://en.wikipedia.org/wiki/Mbeju
+=> https://en.wikipedia.org/wiki/Pita 6: https://en.wikipedia.org/wiki/Pita
+=> https://en.wikipedia.org/wiki/Bazlama 7: https://en.wikipedia.org/wiki/Bazlama
+=> https://en.wikipedia.org/wiki/Manakish 8: https://en.wikipedia.org/wiki/Manakish
+
+=> https://johngodlee.github.io/img/flatbreads/eggs.png South-western style breakfast eggs with salsa, hot sauce and avocado
