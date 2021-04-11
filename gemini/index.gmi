@@ -22,6 +22,7 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-04-10-julia.gmi 2021-04-10 - Learning Julia
 => posts/2021-04-05-flatbreads.gmi 2021-04-05 - Flatbreads
 => posts/2021-03-30-weibull.gmi 2021-03-30 - Modelling stem diameter class distribution with Weibull distributions
 => posts/2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
@@ -31,11 +32,12 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-03-01-azure.gmi 2021-03-01 - Microsoft Azure Translator API call in R
 => posts/2021-02-25-recensus.gmi 2021-02-25 - LaTeX plot census forms
 => posts/2021-02-20-xforms.gmi 2021-01-20 - Making sense of the ODK ecosystem
-=> posts/2021-02-15-repeat.gmi 2021-02-15 - Dynamic lists from user-added choices within repeats and groups, in ODK
 
 => ./posts Archive	
 
-## Other links
+# Other links
 
 => gemini://republic.circumlunar.space:1965/ Mare Serenitatis Circumlunar Corporate Republic
-
+=> gemini://rawtext.club:1965/~sloum/spacewalk.gmi Spacewalk Gemini Capsule Aggregator
+=> gemini://medusae.space:1965/ Medusae Gemini Directory
+=> gemini://gemini.circumlunar.space:1965/ Project Gemini 

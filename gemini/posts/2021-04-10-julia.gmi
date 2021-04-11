@@ -1,0 +1,107 @@
+# Learning Julia
+
+DATE: 2021-04-10
+AUTHOR: John L. Godlee
+
+
+Julia is a programming language I've been wanting to learn for a while. I've been encountering larger and larger datasets during my PhD, both with terrestrial LiDAR data and huge species-by-site diversity matrices. Running everything in R is becoming restrictive when I want to crunch lots of data within a reasonable amount of time.
+
+Julia promises that it looks like Python, feels like Lisp, and runs like C, supposedly straddling that trade-off between speed, expressiveness, and generalisability.
+
+I watched this Youtube tutorial[1] to get me started on the basic syntax, which is quite pleasant to read, and seems familiar to me having a background in R with some Python and shell-scripting. I also found that the official Julia documentation[2] is pretty useful for understanding some of the finer points in more detail.
+
+=> https://www.youtube.com/watch?v=8h8rQyEpiZA 1: https://www.youtube.com/watch?v=8h8rQyEpiZA
+=> https://docs.julialang.org/en/v1/ 2: https://docs.julialang.org/en/v1/
+
+As my first practice I aimed to calculate the Shannon and Simpson diversity indices for a huge species by site matrix.
+
+I created the matrix in R and wrote it to a .csv file:
+
+``` r
+mat <- matrix(sample(0:1000, 10^7, replace = TRUE), nrow = 100000) 
+
+# Write matrix for use in Julia
+write.csv(mat, "mat.csv", row.names = FALSE)
+```
+
+Then in R I used the {vegan} package to calculate the Shannon and Simpson diversity indices, and the {microbenchmark} package to time how long it took:
+
+``` r
+library(vegan)
+
+div <- function(x) {
+  shannon <- diversity(x, "shannon")
+  simpson <- diversity(x, "simpson")
+  return(list(shannon, simpson))
+}
+
+microbenchmark(
+  div(mat),
+  times = 100)
+```
+
+The mean time to complete was 2167 milliseconds.
+
+In Julia the overhead is a bit larger, just because I'm writing my own functions for the diversity indices:
+
+``` julia
+# Packages
+using CSV 
+using BenchmarkTools
+using Tables
+
+# Import matrix from .csv
+mat = CSV.File("mat.csv") |> Tables.matrix
+
+# Define Shannon function
+function shannon(x)
+    xno = [i for i=x if i != 0]
+    N = sum(xno)
+    p = xno / N
+    return -sum(p .* log.(p))
+end
+
+# Define Simpson function
+function simpson(x) 
+    N = sum(x)
+    p = x / N
+    return sum(p.^2)
+end
+
+# Iterate over columns
+function testfunc()
+    shanout = []
+    simpout = []
+    for col in eachcol(mat)
+    	push!(shanout, shannon(col))
+    	push!(simpout, simpson(col))
+    end
+end
+
+# Benchmark
+@benchmark testfunc()
+```
+
+The median time to complete was only 521 ms.
+
+The main issue I'm having at the moment which is tripping me up a lot is the way Julia handles reassigning variables. While in R I could do something like this:
+
+``` r
+x <- c(1,2,3)
+y <- x
+y[1] <- 10
+y != x
+```
+
+and have the last line evaluate as true, in Julia unless I use copy() when reassigning the variable, y will continue to equal x:
+
+``` julia
+x = [1,2,3]
+y = x
+y[1] = 10
+y != x
+
+y = copy(x)
+y[1] = 100
+y != x
+```

@@ -49,6 +49,8 @@ iBREAD	/
 0Basic loaf	loaf.txt
 0Naan 	naan.txt
 0Olive Rosemary Foccacia	olive_rosemary_foccacia.txt
+0Frank Pinello pizza dough	pinello_dough.txt
+0Pizza Margherita	pizza_margherita.txt
 0Potato bread	potato_bread.txt
 
 iMAINS	/
@@ -77,8 +79,3 @@ iMAINS	/
 0Tofu scramble	tofu_scramble.txt
 0Vegetarian Haggis	vegetarian_haggis.txt
 0Yorkshire pudding	yorkshire_pudding.txt
-
-iPIZZA	/
-
-0Frank Pinello pizza dough	pinello_dough.txt
-0Pizza Margherita	pizza_margherita.txt

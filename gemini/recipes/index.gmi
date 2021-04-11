@@ -48,6 +48,8 @@
 => loaf.gmi Basic loaf
 => naan.gmi Naan 
 => olive_rosemary_foccacia.gmi Olive Rosemary Foccacia
+=> pinello_dough.gmi Frank Pinello pizza dough
+=> pizza_margherita.gmi Pizza Margherita
 => potato_bread.gmi Potato bread
 
 ## Mains
@@ -76,8 +78,3 @@
 => tofu_scramble.gmi Tofu scramble
 => vegetarian_haggis.gmi Vegetarian Haggis
 => yorkshire_pudding.gmi Yorkshire pudding
-
-## Pizza
-
-=> pinello_dough.gmi Frank Pinello pizza dough
-=> pizza_margherita.gmi Pizza Margherita
