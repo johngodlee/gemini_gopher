@@ -22,6 +22,7 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-04-15-ecdf.gmi 2021-04-15 - Empirical Cumulative Density Function (ECDF) plots
 => posts/2021-04-10-julia.gmi 2021-04-10 - Learning Julia
 => posts/2021-04-05-flatbreads.gmi 2021-04-05 - Flatbreads
 => posts/2021-03-30-weibull.gmi 2021-03-30 - Modelling stem diameter class distribution with Weibull distributions
@@ -31,7 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-03-10-rss_journals.gmi 2021-03-10 - RSS feeds for scientific journals
 => posts/2021-03-01-azure.gmi 2021-03-01 - Microsoft Azure Translator API call in R
 => posts/2021-02-25-recensus.gmi 2021-02-25 - LaTeX plot census forms
-=> posts/2021-02-20-xforms.gmi 2021-01-20 - Making sense of the ODK ecosystem
 
 => ./posts Archive	
 
