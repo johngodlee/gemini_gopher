@@ -12,7 +12,7 @@ per dry mass. Specifically, I wanted to check what proportion of
 plots had at least a given proportion of trees or more represented
 in TRY.
 
-  [TRY global trait database]:
+  [TRY global trait database]: https://www.try-db.org/
 
 I could have visualised this with a histogram, but it’s not very
 visually appealing because it requires some mental gymnastics to add

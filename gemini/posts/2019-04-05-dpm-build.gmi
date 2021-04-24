@@ -65,3 +65,7 @@ The cost of all the parts was:
 
 
 * Total cost - GBP49.60
+
+
+
+N.B. - Some other sources I've read have expressed concern over absorption of water by the plywood disc, which could alter the weight of the DPM and also warp the disc. I got around this by soaking the disc in PVA glue after drilling to make it waterproof.

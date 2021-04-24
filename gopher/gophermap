@@ -24,6 +24,8 @@ hgemini://republic.circumlunar.space:1965/~johngodlee/	URL:gemini://republic.cir
 
 i==== Phlog =======================================================	/
 
+02021-04-20 - Pretty pictures from Terrestrial LiDAR	posts/2021-04-20-lidar_art.txt
+02021-04-20 - Reading on disc pasture meters	posts/2021-04-20-dpm_reading.txt
 02021-04-15 - Empirical Cumulative Density Function (ECDF) plots	posts/2021-04-15-ecdf.txt
 02021-04-10 - Learning Julia	posts/2021-04-10-julia.txt
 02021-04-05 - Flatbreads	posts/2021-04-05-flatbreads.txt
@@ -32,8 +34,6 @@ i==== Phlog =======================================================	/
 02021-03-20 - Splitting a large woodland survey plot into 1 ha subdiv	posts/2021-03-20-split.txt
 02021-03-15 - Fixing a stool	posts/2021-03-15-stool.txt
 02021-03-10 - RSS feeds for scientific journals	posts/2021-03-10-rss_journals.txt
-02021-03-01 - Microsoft Azure Translator API call in R	posts/2021-03-01-azure.txt
-02021-02-25 - LaTeX plot census forms	posts/2021-02-25-recensus.txt
 
 1Archive	posts
 

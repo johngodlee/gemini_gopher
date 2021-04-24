@@ -1,4 +1,4 @@
-```      
+```ASCII art banner: John L. Godlee
       _       _            _         _____           _ _           
      | |     | |          | |       / ____|         | | |          
      | | ___ | |__  _ __  | |      | |  __  ___   __| | | ___  ___ 
@@ -22,6 +22,8 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-04-20-lidar_art.gmi 2021-04-20 - Pretty pictures from Terrestrial LiDAR
+=> posts/2021-04-20-dpm_reading.gmi 2021-04-20 - Reading on disc pasture meters
 => posts/2021-04-15-ecdf.gmi 2021-04-15 - Empirical Cumulative Density Function (ECDF) plots
 => posts/2021-04-10-julia.gmi 2021-04-10 - Learning Julia
 => posts/2021-04-05-flatbreads.gmi 2021-04-05 - Flatbreads
@@ -30,8 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
 => posts/2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
 => posts/2021-03-10-rss_journals.gmi 2021-03-10 - RSS feeds for scientific journals
-=> posts/2021-03-01-azure.gmi 2021-03-01 - Microsoft Azure Translator API call in R
-=> posts/2021-02-25-recensus.gmi 2021-02-25 - LaTeX plot census forms
 
 => ./posts Archive	
 
@@ -41,3 +41,4 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => gemini://rawtext.club:1965/~sloum/spacewalk.gmi Spacewalk Gemini Capsule Aggregator
 => gemini://medusae.space:1965/ Medusae Gemini Directory
 => gemini://gemini.circumlunar.space:1965/ Project Gemini 
+=> https://git.skyjake.fi/gemini/lagrange Lagrange Gemini and Gopher browser

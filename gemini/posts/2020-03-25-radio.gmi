@@ -31,3 +31,53 @@ url=$(grep "${sel}" ${stations} | sed 's/,.*$//')
 
 vlc "${url}"
 ```
+
+## Update 2021-04-18
+
+The BBC changed their radio streaming URLs which prompted me to also change how this script worked a bit. The radio streaming URLs are now stored in a .pls file, which makes it more compatible with other music players. I've included the full .pls file here because these URLs are hard to come by online:
+
+```
+playlist
+NumberOfEntries=10
+
+Title1=BBC Radio 4 FM
+File1=http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourfm 
+
+Title2=BBC Radio 4 LW - non UK
+File2=http://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourlw_online_nonuk 
+
+Title3=BBC Radio 6
+File3=http://stream.live.vc.bbcmedia.co.uk/bbc_6music 
+
+Title4=BBC Radio London
+File4=http://stream.live.vc.bbcmedia.co.uk/bbc_london  
+
+Title5=BBC World Service
+File5=http://stream.live.vc.bbcmedia.co.uk/bbc_world_service 
+
+Title6=WQXR 
+File6=http://stream.wqxr.org/wqxr 
+
+Title7=LBC
+File7=http://media-ice.musicradio.com:80/LBCNewsUK 
+
+Title9=BBC Radio Scotland
+File9=http://stream.live.vc.bbcmedia.co.uk/bbc_radio_scotland_fm 
+
+Title10=NTS
+File10=http://stream-relay-geo.ntslive.net/stream 
+```
+
+The script looks like this:
+
+```
+#!/usr/bin/env sh 
+
+rfile=~/.radio.pls
+
+station=$(grep '^Title' ${rfile} | sed 's/^Title\([0-9]\+\)=\(.*\)/\1 - \2/' | fzf | sed 's/\(^[0-9]\+\).*/\1/')
+
+url=$(grep "File${station}=" $rfile | sed 's/.*=//')
+
+/Applications/VLC.app/Contents/MacOS/VLC -I rc --no-color $url
+```

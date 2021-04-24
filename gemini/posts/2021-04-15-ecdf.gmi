@@ -6,7 +6,7 @@ AUTHOR: John L. Godlee
 
 Twice recently I've wanted to check the proportional coverage of a dataset. For example, I have a dataset where trees are nested within plots. I wanted to check what proportion of trees within each plot had measurements in the TRY global trait database[1] for leaf nitrogen per dry mass. Specifically, I wanted to check what proportion of plots had at least a given proportion of trees or more represented in TRY.
 
-=>  1:
+=> https://www.try-db.org/ 1: https://www.try-db.org/
 
 I could have visualised this with a histogram, but it's not very visually appealing because it requires some mental gymnastics to add up each bin greater than the minimum threshold:
 

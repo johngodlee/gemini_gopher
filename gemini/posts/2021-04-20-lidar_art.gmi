@@ -1,0 +1,17 @@
+# Pretty pictures from Terrestrial LiDAR
+
+DATE: 2021-04-20
+AUTHOR: John L. Godlee
+
+
+I've been trying to extract tree canopy complexity statistics from my terrestrial LiDAR data. As part of this I have been creating Canopy Height Models (CHMs) for each of my savanna plots. This involves "pit-filling" to remove low points where the LiDAR didn't penetrate all the way to the top of the canopy. Without pit-filling, the canopy surface appears pock-marked and jaggedy, while I want to approximate the top of the canopy as an even surface. So basically, in order to pick the best pit-filling and canopy height model algorithms, I have been making lots of maps and 3D surfaces of the tree canopy surface. I'm not going to get into the maths behind what I did, I just wanted to share some pretty pictures that came out of this process. Note, all these images are from the same plot, in Bicuar National Park, southwest Angola.
+
+=> https://johngodlee.github.io/img/lidar_art/raw.png 99th percentile of height from raw point cloud data, following noise removal and voxelisation
+
+=> https://johngodlee.github.io/img/lidar_art/gam.png Predicted values from a generalised additive model of canopy height
+
+=> https://johngodlee.github.io/img/lidar_art/pit.png Canopy height after pit-filling
+
+=> https://johngodlee.github.io/img/lidar_art/topo.png Topographic roughness index
+
+=> https://johngodlee.github.io/img/lidar_art/topo_coarse.png Topographic roughness index, using a more coarse 1 m^2 resolution

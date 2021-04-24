@@ -1,0 +1,143 @@
+TITLE: Reading on disc pasture meters
+DATE: 2021-04-20
+AUTHOR: John L. Godlee
+====================================================================
+
+
+Apparatus dimensions summary
+
+  -------------------------------------------------------------------------------------------------------
+  Publication                Long rod Long rod   Sleeve   Sleeve     Disc       Disc        Total weight
+                             length   external   pipe     pipe       diameter   thickness   of
+                             (cm)     diameter   length   external   (cm)       (mm)        free-moving
+                                      (mm)       (cm)     diameter                          parts (kg)
+                                                          (mm)                              
+  -------------------------- -------- ---------- -------- ---------- ---------- ----------- -------------
+  Bransby and Tainton (1977) 180      22         120      27         45.8       1.5         1.5
+
+  Dorgeloh et al. (1985)     180      NA         NA       NA         45.8       NA          NA
+
+  Zambatis et al. (2006)     180      22         97       27         45.8       1.5         1.5
+
+  Rayburn et al. (1998)      100      NA         NA       NA         46*46 cm = 5.6         NA
+                             (metre                                  0.21 m^2               
+                             stick)                                  square                 
+  -------------------------------------------------------------------------------------------------------
+
+Bransby and Tainton 1977 - The disc pasture meter : Possible applications in grazing management
+
+[Diagram of DPM from Bransby and Tainton (1977)]
+
+
+They call it a “single stem disc meter”.
+
+180 cm aluminium rod with an external diameter of 22 mm.
+
+120 cm long aluminium sleeve with external diameter of 27 mm.
+Internal diameter should allow it to move freely on the central rod.
+
+Aluminium disc 1.5 mm thick, 45.8 cm diameter attached to the base
+plate on the sleeve by 4 bolts.
+
+Small weights should be attached to the base plate so that the
+sleeve together with the baseplate and disc has a mass of 1.5 kg.
+The disc should be released from a standard height of 60 cm above
+ground level. The sleeve can also be gently placed on the grass
+surface and measured when held at constant height for 15 seconds.
+
+The “sampling cylinder” should be able to be placed over the disc
+and should have the same diameter. The meter should then be removed
+so that the material inside the cylinder can be sampled. Material
+rooted outside the cylinder should still be sampled up to the edge
+of the cylinder.
+
+Dorgeloh et al. 1985 - Calibrating a disc pasture meter to estimate above-ground standing biomass in Mixed Bushveld, South Africa
+
+45.8 cm diameter base plate over a 180 cm long aluminium rod.
+
+They took 9 measurements with the disc pasture meter per square of
+grass clipping and averaged them. To the nearest mm.
+
+Hardy and Mentis 1985 - The relative efficiency of three methods of estimating herbage mass in veld
+
+  All samples were clipped using hand shears. Fifty disc meter
+  readings were taken in each plot to estimate the mean disc height
+  per (1 Ha) plot.
+
+Didn’t follow the grass sampling technique of Bransby and Tainton
+(1977) because they were working on long grass and it was feared
+that they would accidentally include material in the sampling
+cylinder.
+
+Instead, they laid out a 2 x 2 m quadrat and determined mean
+settling height of 9 DPM readings inside the quadrat. The grass of
+the whole quadrat was then clipped.
+
+Zambatis et al. 2006 - Re-evaluation of the disc pasture meter calibration for the Kruger National Park, South Africa
+
+During fieldwork in Kruger, it was found that the DPM frequently
+settles above the bulk of the grass leaf mass, at times resulting in
+inflated DPM settling heights. This was particularly noticeable in
+long grass, maybe because these grasses have highly lignified culms.
+
+The DPM was originally developed in New Zealand (Phillips and
+Clarke, 1971).
+
+The mass of the disc and rod should definitely be known as it
+affects calibration, settling height.
+
+Their measurements:
+
+97 cm long tube of 2.7 cm external diameter attached to a 17.5 cm
+diameter 0.6 cm thick base-plate, with a disc of 45.8 cm diameter
+and 1.5 mm thickness. Total mass of descending parts is 1.5 kg. Long
+aluminium rod of 180 cm, 2.2 cm external diameter.
+
+Clipping should be at a height not more than 3 cm above the ground.
+
+Bransby and Tainton (1977) say that the relationship between DPM
+height and grass mass is linear.
+
+Used a broken stick regression to show the breakpoint at which the
+relationship between DPM height and mean crop mass changes, getting
+more flat at height DPM heights.
+
+More links
+
+Phytosphere Gear - Falling plate meter
+
+  [Phytosphere Gear - Falling plate meter]: http://phytosphere.com/gear/fallingplatemeter.html
+
+More images
+
+[Top of falling plate meter from Phytosphere Gear]
+
+
+[DPM in action in Mongolia]
+
+
+[DPM in action in USA with sampling cylinder]
+
+
+Information on common pipe sizes in the UK
+
+  Pipe                  Ext. diam. (mm)   Int. diam. (mm)
+  --------------------- ----------------- -----------------
+  Rainwater downcomer   68.0              63.8
+  1 1/2" waste pipe     41.4              36.6
+  1 1/4" waste pipe     35.0              30.0
+  Large overflow pipe   25.0              21.0
+  Small overflow pipe   20.0              16.0
+
+My design
+
+-   Sleeve pipe internal diameter - >36.6 mm (1.15")
+-   Sleeve pipe external diameter - 40-41.4 mm
+-   Sleeve pipe length - 60 cm ?
+-   Long rod length - 180 cm
+-   Long rod external diameter - lt36 mm
+-   Flange internal diameter - 40 mm (FULL FACE FLANGE PN10/PN16BR1
+    40 mm) (237 g)
+-   4 M16X70 bolts for the flange
+-   Plywood disc diameter - 45.8 cm
+-   Total weight of free-moving parts - 1.5 kg
