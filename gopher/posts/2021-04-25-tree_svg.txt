@@ -1,0 +1,32 @@
+TITLE: Polygon SVG diagrams
+DATE: 2021-04-25
+AUTHOR: John L. Godlee
+====================================================================
+
+
+I’ve been making lots of illustrative diagrams for my PhD thesis,
+mostly to demonstrate woodland tree canopy structure. I wanted a set
+of customisable tree graphics that didn’t distract too much. I made
+these polygon trees in Inkscape and thought I would share them for
+anybody who wanted to use them:
+
+  [Inkscape]:
+
+[All polygon trees]
+
+
+Here are the raw .svg files:
+
+-   Tree 1
+-   Tree 2
+-   Tree 3
+-   Tree 4
+-   Tree 5
+-   Tree 6
+
+  [Tree 1]: https://johngodlee.github.io/files/tree_svg/tree_poly1.svg
+  [Tree 2]: https://johngodlee.github.io/files/tree_svg/tree_poly2.svg
+  [Tree 3]: https://johngodlee.github.io/files/tree_svg/tree_poly3.svg
+  [Tree 4]: https://johngodlee.github.io/files/tree_svg/tree_poly4.svg
+  [Tree 5]: https://johngodlee.github.io/files/tree_svg/tree_poly5.svg
+  [Tree 6]: https://johngodlee.github.io/files/tree_svg/tree_poly6.svg

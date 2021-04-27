@@ -22,6 +22,7 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-04-25-tree_svg.gmi 2021-04-25 - Polygon SVG diagrams
 => posts/2021-04-20-lidar_art.gmi 2021-04-20 - Pretty pictures from Terrestrial LiDAR
 => posts/2021-04-20-dpm_reading.gmi 2021-04-20 - Reading on disc pasture meters
 => posts/2021-04-15-ecdf.gmi 2021-04-15 - Empirical Cumulative Density Function (ECDF) plots
@@ -31,7 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
 => posts/2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
 => posts/2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
-=> posts/2021-03-10-rss_journals.gmi 2021-03-10 - RSS feeds for scientific journals
 
 => ./posts Archive	
 
@@ -41,4 +41,4 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => gemini://rawtext.club:1965/~sloum/spacewalk.gmi Spacewalk Gemini Capsule Aggregator
 => gemini://medusae.space:1965/ Medusae Gemini Directory
 => gemini://gemini.circumlunar.space:1965/ Project Gemini 
-=> https://git.skyjake.fi/gemini/lagrange Lagrange Gemini and Gopher browser
+=> gemini://skyjake.fi/lagrange/ Lagrange Gemini and Gopher browser
