@@ -4,6 +4,8 @@ DATE: 2021-04-20
 AUTHOR: John L. Godlee
 
 
+Note that this information has since been expanded upon and is available as a .pdf [here](https://johngodlee.github.io/files/dpm_reading/dpm.pdf).
+
 ## Apparatus dimensions summary
 
 ``` table

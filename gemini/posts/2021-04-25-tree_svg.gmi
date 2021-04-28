@@ -6,7 +6,7 @@ AUTHOR: John L. Godlee
 
 I've been making lots of illustrative diagrams for my PhD thesis, mostly to demonstrate woodland tree canopy structure. I wanted a set of customisable tree graphics that didn't distract too much. I made these polygon trees in Inkscape[1] and thought I would share them for anybody who wanted to use them:
 
-=>  1:
+=> https://inkscape.org/ 1: https://inkscape.org/
 
 => https://johngodlee.github.io/img/tree_svg/tree_poly_all.png All polygon trees
 

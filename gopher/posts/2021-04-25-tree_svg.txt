@@ -10,7 +10,7 @@ of customisable tree graphics that didn’t distract too much. I made
 these polygon trees in Inkscape and thought I would share them for
 anybody who wanted to use them:
 
-  [Inkscape]:
+  [Inkscape]: https://inkscape.org/
 
 [All polygon trees]
 
