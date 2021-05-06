@@ -22,6 +22,8 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-05-05-fzf.gmi 2021-05-05 - FZF in vim and bash
+=> posts/2021-04-30-asciichart.gmi 2021-04-30 - ASCII charts in R
 => posts/2021-04-25-tree_svg.gmi 2021-04-25 - Polygon SVG diagrams
 => posts/2021-04-20-lidar_art.gmi 2021-04-20 - Pretty pictures from Terrestrial LiDAR
 => posts/2021-04-20-dpm_reading.gmi 2021-04-20 - Reading on disc pasture meters
@@ -30,8 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-04-05-flatbreads.gmi 2021-04-05 - Flatbreads
 => posts/2021-03-30-weibull.gmi 2021-03-30 - Modelling stem diameter class distribution with Weibull distributions
 => posts/2021-03-25-planting.gmi 2021-03-25 - Planting 10 acres of woodland
-=> posts/2021-03-20-split.gmi 2021-03-20 - Splitting a large woodland survey plot into 1 ha subdivisions
-=> posts/2021-03-15-stool.gmi 2021-03-15 - Fixing a stool
 
 => ./posts Archive	
 

@@ -1,0 +1,74 @@
+# FZF in vim and bash
+
+DATE: 2021-05-05
+AUTHOR: John L. Godlee
+
+
+I took some time to get my notes in order and to properly implement FZF, both in Bash and Vim. I have known about FZF for a long time, and use it regularly to [choose internet radio stations](https://johngodlee.github.io/2020/03/25/radio.html), but I know that it's a very adapatable program, and I'd seen some cool FZF applications online, so I wanted to try and use it more deeply for myself.
+
+First are the default variables. Like many others I use ripgrep[1] to list files faster within FZF. By default I choose to show hidden files (--hidden), but exclude files inside .git directories (--glob "!.git/*"). I enable multi-selection with  (-m) and enable ANSI colour codes (--ansi). These variables live in my ~/.bashrc.
+
+=> https://github.com/BurntSushi/ripgrep 1: https://github.com/BurntSushi/ripgrep
+
+``` bash
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+export FZF_DEFAULT_OPTS="-m --ansi"
+```
+
+I have a file-picker script, which smply lists files in the directory tree, with a preview window:
+
+``` bash
+#!/usr/bin/env bash
+
+files=($(fzf \
+    --query="$1" \
+    --multi \
+    --select-1 \
+    --exit-0 \
+    --preview='bat --color=always --line-range=:100 {}' \
+    --preview-window 'right:50%:sharp:+{2}-/3:~3'))
+[ -n "$files" ]] && ${EDITOR:-vim} "${files[@
+```
+
+I have the same functionality in vim using junegunn/fzf.vim, with nnoremap <Leader>p :Files<CR>, like the old ctrl-p plugin.
+
+I have a similar script which instead searches both the contents and names of files:
+
+``` bash
+files=($(rg --line-number --no-heading --color=always --smart-case --hidden --glob "!.git/*" "${*:-}" | 
+    fzf \
+    --multi \
+    --delimiter=: \
+    --preview='bat --color=always {1} --highlight-line={2}' \
+    --preview-window 'right:50%:sharp:+{2}-/3:~3' | 
+    sed 's/:.*//'))
+[ -n "$files" ]] && ${EDITOR} "${files[@
+```
+
+In vim this is accomplished by nnoremap <Leader>f :Rg<CR>.
+
+=> https://johngodlee.github.io/img/fzf/f.png File contents search
+
+A neat extra feature I have in vim is to search from the root of a git repository:
+
+``` vim
+command! -bang -nargs=* ProjRg
+    \ call fzf#vim#grep(
+    \ "rg --column --line-number --no-heading --color=always --smart-case --hidden --glob \"!.git/*\" -- ".shellescape(<q-args>), 1,
+    \ fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+nnoremap <Leader>g :ProjRg<CR>
+```
+
+This bash script searches the macOS Applications directory to allow me to open GUI apps from the terminal:
+
+``` bash
+#!/usr/bin/env bash
+
+open "$(find /Applications -name '*app' -maxdepth 1 |\
+    sed 's|\/Applications\/\(.*\).app|\1|' |\
+    fzf |\
+    sed 's|$|.app|' |\
+    sed 's|^|\/Applications\/|')"
+```
+
+=> https://johngodlee.github.io/img/fzf/fapp.png macOS application launcher

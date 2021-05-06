@@ -3,6 +3,8 @@
 => ../ Back to home
 
 
+=> 2021-05-05-fzf.gmi 2021-05-05 - FZF in vim and bash
+=> 2021-04-30-asciichart.gmi 2021-04-30 - ASCII charts in R
 => 2021-04-25-tree_svg.gmi 2021-04-25 - Polygon SVG diagrams
 => 2021-04-20-lidar_art.gmi 2021-04-20 - Pretty pictures from Terrestrial LiDAR
 => 2021-04-20-dpm_reading.gmi 2021-04-20 - Reading on disc pasture meters
