@@ -46,6 +46,7 @@
 => drop_biscuits.gmi Drop biscuits 
 => khachapuri.gmi Khachapuri - Georgian Cheese Bread 
 => loaf.gmi Basic loaf
+=> lopez_alt_pizza_dough.gmi J. Kenji Lopez-Alt pizza dough
 => naan.gmi Naan 
 => olive_rosemary_foccacia.gmi Olive Rosemary Foccacia
 => pinello_dough.gmi Frank Pinello pizza dough

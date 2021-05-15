@@ -24,6 +24,8 @@ hgemini://republic.circumlunar.space:1965/~johngodlee/	URL:gemini://republic.cir
 
 i==== Phlog =======================================================	/
 
+02021-05-15 - Using nnn.vim as a filepicker for neomutt attachments	posts/2021-05-15-nnn_mutt.txt
+02021-05-10 - Calculating the winkelmass in R	posts/2021-05-10-winkelmass.txt
 02021-05-05 - FZF in vim and bash	posts/2021-05-05-fzf.txt
 02021-04-30 - ASCII charts in R	posts/2021-04-30-asciichart.txt
 02021-04-25 - Polygon SVG diagrams	posts/2021-04-25-tree_svg.txt
@@ -32,8 +34,6 @@ i==== Phlog =======================================================	/
 02021-04-15 - Empirical Cumulative Density Function (ECDF) plots	posts/2021-04-15-ecdf.txt
 02021-04-10 - Learning Julia	posts/2021-04-10-julia.txt
 02021-04-05 - Flatbreads	posts/2021-04-05-flatbreads.txt
-02021-03-30 - Modelling stem diameter class distribution with Weibull	posts/2021-03-30-weibull.txt
-02021-03-25 - Planting 10 acres of woodland	posts/2021-03-25-planting.txt
 
 1Archive	posts
 

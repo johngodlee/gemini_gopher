@@ -1,0 +1,96 @@
+TITLE: Using nnn.vim as a filepicker for neomutt attachments
+DATE: 2021-05-15
+AUTHOR: John L. Godlee
+====================================================================
+
+
+In a previous post I talked about using vifm as a filepicker within
+vim to choose files to attach to an email sent by the neomutt email
+client.
+
+  [previous post]: https://johngodlee.github.io/2019/02/15/vifm-mutt.html
+  [vifm]: https://vifm.info/
+  [neomutt]: https://neomutt.org/
+
+I got an email from someone who had read that post, asking a few
+questions to get the system running properly. I hadn’t actually used
+that workflow for some time, and when I tried to get it to run I
+found that it didn’t work anymore. After some light debugging I
+realised that the problem was that I had switched to neovim, a fork
+of vim which aims to improve on vim in some areas where it has
+stagnated. One major difference between neovim and vim is that
+neovim can’t do interactive ‘bang’ commands. Instead everything has
+to be done through the :terminal buffer.
+
+  [neovim]: https://neovim.io/
+  [neovim can’t do interactive ‘bang’ commands]: https://github.com/neovim/neovim/issues/1496
+
+This problem led me down a rabbit hole to construct a better
+attachment picker for neovim.
+
+I don’t actually use vifm anymore. I find that I rarely need its
+split-panel capabilities. I generally use basic ls, mv, etc, and on
+the occasion I need to move multiple files with regex or whatever, I
+use vimv, a very simple bash script.
+
+  [vimv]: https://github.com/thameera/vimv
+
+I do keep a version of the nnn file manager on my system however,
+just in case. nnn is fast and minimal enough in its un-patched out
+of the box state that I never have to think about it. I found out
+that there is a nnn.vim plugin that works very similar to the
+fzf.vim plugin that I already use for quickly navigating files in
+vim. With some help from the maintainer of nnn.vim (see this issue),
+I wrote some vimscript to pick files in nnn.vim and paste them in as
+attachments in my mutt email.
+
+  [nnn file manager]: https://github.com/jarun/nnn
+  [nnn.vim plugin]: https://github.com/mcchrish/nnn.vim
+  [fzf.vim plugin]: https://github.com/junegunn/fzf.vim
+  [see this issue]: https://github.com/mcchrish/nnn.vim/issues/91
+
+First the nnn.vim plugin must be installed, for example with
+vim-plug: Plug 'mcchrish/nnn.vim'.
+
+Then write a function to format the output of nnn.vim:
+
+    function! s:mutt_attach(lines)
+      let prettylines = ''
+      for i in a:lines
+        let prettylines .= 'Attach: ' . fnameescape(i) . "\n"
+      endfor
+      6put =prettylines
+    endfunction
+
+This function will get the filenames returned by nnn.vim, escape any
+special characters in those filenames with fnameescape(i), wrap the
+filenames with Attach: before the name and a newline after the name,
+then paste all the lines at the 6th line of the vim buffer, which is
+where the mutt headers are located by default.
+
+Then, to call this function, it’s necessary to write a custom
+nnn#pick function that itself can handle an external function as the
+edit command:
+
+    function! s:nnncall(...)
+      let l:dir = get(a:, 1, '')
+      let l:opts = get(a:, 2, { 'edit': 'edit' })
+      let l:keypress = get(a:, 3, '')
+      call nnn#pick(l:dir, l:opts)
+      if strlen(l:keypress) > 0
+        call feedkeys(l:keypress)
+      endif
+    endfunction
+
+This is the bit I got from @mcchrish.
+
+And finally write a file type specific mapping that only works in
+mail filetypes:
+
+    autocmd Filetype mail nnoremap <silent> <Leader>A :call <SID>nnncall('/Users/johngodlee', { 'edit': function('<SID>mutt_attach') })<CR>
+
+[nnn.vim in action]
+
+
+[Results pasted into vim buffer]
+

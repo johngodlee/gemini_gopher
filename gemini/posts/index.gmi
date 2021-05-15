@@ -3,6 +3,8 @@
 => ../ Back to home
 
 
+=> 2021-05-15-nnn_mutt.gmi 2021-05-15 - Using nnn.vim as a filepicker for neomutt attachments
+=> 2021-05-10-winkelmass.gmi 2021-05-10 - Calculating the winkelmass in R
 => 2021-05-05-fzf.gmi 2021-05-05 - FZF in vim and bash
 => 2021-04-30-asciichart.gmi 2021-04-30 - ASCII charts in R
 => 2021-04-25-tree_svg.gmi 2021-04-25 - Polygon SVG diagrams
