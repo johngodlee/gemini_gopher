@@ -22,6 +22,7 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-05-20-compind.gmi 2021-05-20 - compInd: An R package for forest tree-tree competition indices
 => posts/2021-05-15-nnn_mutt.gmi 2021-05-15 - Using nnn.vim as a filepicker for neomutt attachments
 => posts/2021-05-10-winkelmass.gmi 2021-05-10 - Calculating the winkelmass in R
 => posts/2021-05-05-fzf.gmi 2021-05-05 - FZF in vim and bash
@@ -31,7 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-04-20-dpm_reading.gmi 2021-04-20 - Reading on disc pasture meters
 => posts/2021-04-15-ecdf.gmi 2021-04-15 - Empirical Cumulative Density Function (ECDF) plots
 => posts/2021-04-10-julia.gmi 2021-04-10 - Learning Julia
-=> posts/2021-04-05-flatbreads.gmi 2021-04-05 - Flatbreads
 
 => ./posts Archive	
 

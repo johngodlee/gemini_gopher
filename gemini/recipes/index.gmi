@@ -40,13 +40,15 @@
 
 ## Bread
 
-=> arabic_bread.gmi Arabic flatbreads
 => beer_rolls.gmi Cheesy beer bread rolls
 => ciabatta.gmi Ciabatta (Yukon Magazine, Alpine Bakery)
+=> coriander_paratha.gmi Coriander stuffed paratha
 => drop_biscuits.gmi Drop biscuits 
+=> everyday_flatbreads.gmi Everyday flatbreads
 => khachapuri.gmi Khachapuri - Georgian Cheese Bread 
 => loaf.gmi Basic loaf
 => lopez_alt_pizza_dough.gmi J. Kenji Lopez-Alt pizza dough
+=> meloui_bread.gmi Meloui flatbreads 
 => naan.gmi Naan 
 => olive_rosemary_foccacia.gmi Olive Rosemary Foccacia
 => pinello_dough.gmi Frank Pinello pizza dough
