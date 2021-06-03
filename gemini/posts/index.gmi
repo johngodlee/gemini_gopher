@@ -3,6 +3,8 @@
 => ../ Back to home
 
 
+=> 2021-06-03-edta_blog.gmi 2021-06-03 - A blog post on the Edinburgh Teaching Award
+=> 2021-06-01-befr.gmi 2021-06-01 - Diagrams to summarise Biodiversity - Ecosystem Function Research
 => 2021-05-20-compind.gmi 2021-05-20 - compInd: An R package for forest tree-tree competition indices
 => 2021-05-15-nnn_mutt.gmi 2021-05-15 - Using nnn.vim as a filepicker for neomutt attachments
 => 2021-05-10-winkelmass.gmi 2021-05-10 - Calculating the winkelmass in R
