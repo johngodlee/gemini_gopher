@@ -22,6 +22,9 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-06-25-r_packages.gmi 2021-06-25 - Network graph of R package usage
+=> posts/2021-06-23-seco_pres.gmi 2021-06-23 - Interview presentation for SECO post-doc position
+=> posts/2021-06-17-carbon_ascii.gmi 2021-06-17 - ASCII/UTF8 terrestrial carbon cycle diagram
 => posts/2021-06-03-edta_blog.gmi 2021-06-03 - A blog post on the Edinburgh Teaching Award
 => posts/2021-06-01-befr.gmi 2021-06-01 - Diagrams to summarise Biodiversity - Ecosystem Function Research
 => posts/2021-05-20-compind.gmi 2021-05-20 - compInd: An R package for forest tree-tree competition indices
@@ -29,9 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-05-10-winkelmass.gmi 2021-05-10 - Calculating the winkelmass in R
 => posts/2021-05-05-fzf.gmi 2021-05-05 - FZF in vim and bash
 => posts/2021-04-30-asciichart.gmi 2021-04-30 - ASCII charts in R
-=> posts/2021-04-25-tree_svg.gmi 2021-04-25 - Polygon SVG diagrams
-=> posts/2021-04-20-lidar_art.gmi 2021-04-20 - Pretty pictures from Terrestrial LiDAR
-=> posts/2021-04-20-dpm_reading.gmi 2021-04-20 - Reading on disc pasture meters
 
 => ./posts Archive	
 

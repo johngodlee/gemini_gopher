@@ -93,3 +93,24 @@ The script looks like this:
     url=$(grep "File${station}=" $rfile | sed 's/.*=//')
 
     /Applications/VLC.app/Contents/MacOS/VLC -I rc --no-color $url
+
+Update 2021-06-03
+
+I was getting annoyed having to quit out of FZF and relaunch the
+script every time I wanted to change the radio station, so I
+re-wrote it to use mpv, using the --bind flag in fzf to run a
+never-ending loop. I tried to do similar using VLC, but it kept
+quitting back to FZF immediately, rather than keeping VLC open until
+I wanted to quit.
+
+    #!/usr/bin/env sh
+
+    rfile=~/.radio.pls
+
+    grep '^Title' ${rfile} |\
+        sed 's/^Title\([0-9]\+\)=\(.*\)/\1 - \2/' |\
+        fzf --bind="enter:execute;echo {} | sed 's/\(^[0-9]\+\).*/\1/' | 
+        sed 's/\(.*\)/File\1=/' |
+        grep -f - ${rfile} |
+        sed 's/.*=//' |
+        mpv --playlist=- ;"
