@@ -22,6 +22,9 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 
 # Phlog 
 
+=> posts/2021-07-15-biblatex.gmi 2021-07-15 - BibLaTeX reference formatting
+=> posts/2021-07-10-tmux_popup.gmi 2021-07-10 - tmux popup windows for quickly launching scripts
+=> posts/2021-07-05-catalogs.gmi 2021-07-05 - Scraping museum catalogues
 => posts/2021-06-25-r_packages.gmi 2021-06-25 - Network graph of R package usage
 => posts/2021-06-23-seco_pres.gmi 2021-06-23 - Interview presentation for SECO post-doc position
 => posts/2021-06-17-carbon_ascii.gmi 2021-06-17 - ASCII/UTF8 terrestrial carbon cycle diagram
@@ -29,9 +32,6 @@ This is a mirror of my personal website where I keep my CV, a collection of reci
 => posts/2021-06-01-befr.gmi 2021-06-01 - Diagrams to summarise Biodiversity - Ecosystem Function Research
 => posts/2021-05-20-compind.gmi 2021-05-20 - compInd: An R package for forest tree-tree competition indices
 => posts/2021-05-15-nnn_mutt.gmi 2021-05-15 - Using nnn.vim as a filepicker for neomutt attachments
-=> posts/2021-05-10-winkelmass.gmi 2021-05-10 - Calculating the winkelmass in R
-=> posts/2021-05-05-fzf.gmi 2021-05-05 - FZF in vim and bash
-=> posts/2021-04-30-asciichart.gmi 2021-04-30 - ASCII charts in R
 
 => ./posts Archive	
 

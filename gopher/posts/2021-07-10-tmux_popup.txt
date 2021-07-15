@@ -1,0 +1,56 @@
+TITLE: tmux popup windows for quickly launching scripts
+DATE: 2021-07-10
+AUTHOR: John L. Godlee
+====================================================================
+
+
+I was inspired by this video, which uses the pop-up window feature
+in tmux v3.2+ to quickly launch scripts that don’t deserve their own
+pane. I wrote a similar script to handle the pop-ups, which I keep
+in my $PATH:
+
+  [this video]: https://www.youtube.com/watch?v=41JxYe70Xwo
+  [tmux]: https://github.com/tmux/tmux
+
+    #!/usr/bin/env sh
+
+    # List scripts 
+    read -d '' APPS << EOF
+    passwords   ~/bin/tmux_popup/./fpass_popup
+    mount drives    ~/bin/netmount
+    search papers   ~/bin/papers
+    stopwatch   ~/bin/stopwatch
+    internet speed test ~/bin/speed
+    emojis  ~/bin/tmux_popup/./emoji_popup
+    calculator  ~/bin/tmux_popup/./calc_popup
+    EOF
+
+    SELECTED="$(echo "$APPS" | fzf -d " " --with-nth 1 | sed "s/.*\t//g")"
+
+    eval "${SELECTED}"
+
+The scripts are listed by their name, which appears in the fzf
+pop-up, and their path, separated by a tab.
+
+[Example of tmux popup window]
+
+
+The scripts currently available in the popup:
+
+-   passwords - Search pass password store using fzf and copy the
+    selected password to the clipboard
+-   mount drives - Search mountable drives using fzf and mount the
+    selected drive
+-   search papers - Search through academic article pdfs using fzf
+    and pdftotext, then open the selected pdf
+-   stopwatch - Run a stopwatch
+-   internet speed test - Run an upload/download speed test
+-   emojis - Search through emojis using fzf and copy the selected
+    emoji to the clipboard
+-   calculator - open an R console with --no-save and --quiet flags
+    for performing simple calculations
+
+The script is launched by hitting <prefix>-Tab in tmux, using this
+line in my .tmux.conf:
+
+    bind-key Tab capture-pane \; save-buffer /tmp/tmux-buffer \; delete-buffer \; display-popup -w 50% -h 50% -E "/path/to/fzf-speed"

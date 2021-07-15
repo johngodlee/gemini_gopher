@@ -1,0 +1,216 @@
+TITLE: Scraping museum catalogues
+DATE: 2021-07-05
+AUTHOR: John L. Godlee
+====================================================================
+
+
+My partner is visiting some museums and art galleries in the eastern
+United States in the autumn, to look at Maya, Aztec and Mixtec
+artefacts that relate to slavery, captivity and forced labour. To
+find artefacts, she was looking through the online catalogues of
+each institution, and at the same time wanted to record metadata
+about the objects to refer back to later. Unfortunately, harvesting
+the metadata was taking a long time due to all the copying and
+pasting and manually saving images. I tried to help by writing a few
+scripts to scrape through the object records online and format the
+metadata in an organised format.
+
+Some of the institutions provide decent APIs to get artefact data,
+but others only provide web pages, so I had to use a mixture of
+different methods to scrape the information.
+
+The institutions I scraped were:
+
+-   Dumbarton Oaks
+-   Museum of Fine Arts Boston
+-   Nasher Museum of Art at Duke University
+-   The Metropolitan Museum of Art New York
+-   Yale Peabody Museum of Natural History
+-   Penn Museum
+-   Princeton University Art Museum
+-   Smithsonian National Museum of Natural History
+
+For each of the institutions I was given a txt file of links. I used
+R to scrape the information as that’s what I know best. For
+institutions who don’t have APIs, i.e. Dumbarton Oaks, Museum of
+Fine Arts Boston, Nasher, Yale Peabody, and Penn Museum, I used
+{rvest} to parse the html files. For example, for Nasher:
+
+    # Packages
+    library(rvest)
+    library(dplyr)
+
+    # List record URLS
+    urls <- readLines("links.txt")
+
+    # Download pages
+    lapply(urls, function(x) {
+      download.file(x, destfile = file.path("html", 
+          gsub("/.*", "", gsub("https://emuseum.nasher.duke.edu/objects/", "", x))))
+    })
+
+    # List html files
+    html_files <- list.files("html", "*", full.names = TRUE)
+
+    # For each file
+    out_list <- lapply(html_files, function(x) {
+      x <- read_html(x)
+
+      # Get object title
+      obj_title <- x %>%
+        html_nodes("div.titleField") %>%
+        html_nodes("h1") %>%
+        html_text()
+
+      # Get object metadata
+      obj_labels <- x %>%
+        html_nodes("span.detailFieldLabel") %>%
+        html_text() %>%
+        gsub(":.*", "", .)
+
+      obj_values <- x %>%
+        html_nodes("span.detailFieldValue") %>%
+        html_text()
+
+      # Create dataframe
+      out <- as.data.frame(t(data.frame(obj_values)))
+      names(out) <- obj_labels
+
+      # Extract image IDs
+      main_img_id <- x %>%
+        html_nodes("div.emuseum-img-wrap") %>%
+        html_nodes("img") %>%
+        html_attr("src") %>%
+        gsub("/internal/media/dispatcher/", "", .) %>%
+        gsub("/.*", "", .) %>%
+        unique()
+
+      sec_img_id <- x %>% 
+        html_nodes("div.secondarymedia-item") %>%
+        html_nodes("a") %>%
+        html_attr("data-media-id") %>%
+        unique() 
+
+      img_id <- unique(c(main_img_id, sec_img_id))
+
+      # Construct image URLs
+      img_url <- paste0(
+        "https://emuseum.nasher.duke.edu/internal/media/dispatcher/", 
+        img_id, 
+        "/resize%3Aformat%3Dfull")
+
+      # Create filenames
+      img_filenames <- paste0(out$`Object number`, "_", img_id, ".jpg")
+
+      # Download images
+      if (length(img_url[!is.na(img_url)]) > 1) {
+        download.file(img_url, destfile = file.path("img", img_filenames), 
+          method = "libcurl")
+      } else if (length(img_url[!is.na(img_url)]) == 1) { 
+        download.file(img_url, destfile = file.path("img", img_filenames))
+      }
+
+      return(out)
+    })
+
+    # Write metadata to csv
+    out <- do.call(bind_rows, out_list)
+
+    write.csv(out, "all.csv", row.names = FALSE)
+
+I think Princeton probably had the nicest and simplest API to use,
+while the Smithsonian had the most difficult API. However, the
+complexity of the Smithsonian API is probably because they have lots
+of institutions all running the same API, and a very diverse range
+of records.
+
+To query the API I used {httr}, and to parse the JSON returned by
+the APIs I used {jsonlite}. Using the Princeton API as an example:
+
+    library(httr)
+    library(jsonlite)
+    library(dplyr)
+
+    base <- "https://data.artmuseum.princeton.edu/objects/"
+
+    # Import links
+    links <- readLines("links.txt")
+
+    # Get IDs
+    ids <- gsub(".*/", "", links)
+
+    # For each ID, get record
+    out_list <- lapply(ids, function(x) {
+      message(x)
+      # Get record
+      resp <- GET(paste0(base, x))
+
+      # Parse JSON
+      resp_parsed <- content(resp, as = "parsed")
+
+      # Save JSON 
+      write(content(resp, as = "text"), file.path("json", paste0(x, ".json")))
+
+      ifnull <- function(x) { 
+        if (is.null(x)) { 
+          return("NA")
+        } else {
+          return(x) 
+        }
+      }
+
+      # Extract description
+      desc_df <- data.frame(
+        displayperiod = ifnull(resp_parsed$displayperiod),
+        displayculture = ifnull(resp_parsed$displayculture),
+        classification = ifnull(resp_parsed$classification),
+        daterange = ifnull(resp_parsed$daterange),
+        description = ifnull(paste(lapply(resp_parsed$texts, function(x) {
+          x$textentryhtml
+        }), collapse = "; ")),
+        accessionyear = ifnull(resp_parsed$accessionyear),
+        title = ifnull(resp_parsed$titles[[1]]$title),
+        catalograisonne = ifnull(resp_parsed$catalograisonne),
+        objectnumber = ifnull(resp_parsed$objectnumber),
+        objectid = ifnull(resp_parsed$objectid),
+        department = ifnull(resp_parsed$department),
+        country = ifnull(resp_parsed$geography[[1]]$country),
+        locale = ifnull(resp_parsed$geography[[1]]$locale),
+        region = ifnull(resp_parsed$geography[[1]]$region),
+        subcontinent = ifnull(resp_parsed$geography[[1]]$subcontinent),
+        locus = ifnull(resp_parsed$geography[[1]]$locus),
+        county = ifnull(resp_parsed$geography[[1]]$county),
+        excavation = ifnull(resp_parsed$geography[[1]]$excavation),
+        state = ifnull(resp_parsed$geography[[1]]$state),
+        latitude = ifnull(resp_parsed$geography[[1]]$location$lat),
+        longitude = ifnull(resp_parsed$geography[[1]]$location$lon),
+        river = ifnull(resp_parsed$geography[[1]]$location$river),
+        continent = ifnull(resp_parsed$geography[[1]]$continent),
+        medium = ifnull(resp_parsed$medium),
+        dimensions = ifnull(paste(lapply(resp_parsed$dimensionelements, function(x) {
+          paste(x$type, x$dimension, x$element, x$units, sep = ":")
+        }), collapse = "; "))
+        )
+
+      img_list <- lapply(resp_parsed$media, function(x) {
+        c(x$uri, x$id)
+        })
+
+      img_filenames <- paste0(x, "_", lapply(img_list, "[", 2),  ".jpg")
+
+      img_urls <- paste0(lapply(img_list, "[", 1), "/full/full/0/default.jpg")
+      
+      if (length(img_list[!is.na(img_list)]) > 1) {
+        try(download.file(img_urls, destfile = file.path("img", img_filenames), 
+          method = "libcurl"))
+      } else if (length(img_list[!is.na(img_list)]) == 1) { 
+        try(download.file(img_urls, destfile = file.path("img", img_filenames)))
+      }
+
+      return(desc_df)
+    })
+
+    # Write metadata to csv
+    out <- do.call(bind_rows, out_list)
+
+    write.csv(out, "all.csv", row.names = FALSE)

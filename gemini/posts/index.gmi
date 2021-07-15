@@ -3,6 +3,9 @@
 => ../ Back to home
 
 
+=> 2021-07-15-biblatex.gmi 2021-07-15 - BibLaTeX reference formatting
+=> 2021-07-10-tmux_popup.gmi 2021-07-10 - tmux popup windows for quickly launching scripts
+=> 2021-07-05-catalogs.gmi 2021-07-05 - Scraping museum catalogues
 => 2021-06-25-r_packages.gmi 2021-06-25 - Network graph of R package usage
 => 2021-06-23-seco_pres.gmi 2021-06-23 - Interview presentation for SECO post-doc position
 => 2021-06-17-carbon_ascii.gmi 2021-06-17 - ASCII/UTF8 terrestrial carbon cycle diagram

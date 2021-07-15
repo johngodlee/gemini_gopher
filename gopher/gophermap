@@ -24,6 +24,9 @@ hgemini://republic.circumlunar.space:1965/~johngodlee/	URL:gemini://republic.cir
 
 i==== Phlog =======================================================	/
 
+02021-07-15 - BibLaTeX reference formatting	posts/2021-07-15-biblatex.txt
+02021-07-10 - tmux popup windows for quickly launching scripts	posts/2021-07-10-tmux_popup.txt
+02021-07-05 - Scraping museum catalogues	posts/2021-07-05-catalogs.txt
 02021-06-25 - Network graph of R package usage	posts/2021-06-25-r_packages.txt
 02021-06-23 - Interview presentation for SECO post-doc position	posts/2021-06-23-seco_pres.txt
 02021-06-17 - ASCII/UTF8 terrestrial carbon cycle diagram	posts/2021-06-17-carbon_ascii.txt
@@ -31,9 +34,6 @@ i==== Phlog =======================================================	/
 02021-06-01 - Diagrams to summarise Biodiversity - Ecosystem Function	posts/2021-06-01-befr.txt
 02021-05-20 - compInd: An R package for forest tree-tree competition 	posts/2021-05-20-compind.txt
 02021-05-15 - Using nnn.vim as a filepicker for neomutt attachments	posts/2021-05-15-nnn_mutt.txt
-02021-05-10 - Calculating the winkelmass in R	posts/2021-05-10-winkelmass.txt
-02021-05-05 - FZF in vim and bash	posts/2021-05-05-fzf.txt
-02021-04-30 - ASCII charts in R	posts/2021-04-30-asciichart.txt
 
 1Archive	posts
 

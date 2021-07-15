@@ -1,0 +1,252 @@
+TITLE: BibLaTeX reference formatting
+DATE: 2021-07-15
+AUTHOR: John L. Godlee
+====================================================================
+
+
+I was preparing references for a paper I submitted to a journal. The
+journal had some pretty specific reference formatting criteria, and
+for whatever reason submitting a .bib file wasn’t enough for them. I
+have been using biblatex for quite some time, but have always
+puzzled over how to customise the citations and reference list.
+Formatted references are very ambiguous, with innumerable different
+ways to display the same information. As such, customising the
+output of BibLaTeX is also quite complex, as it has to deal with the
+many edge cases that occur in author names, and the many different
+types of reference.
+
+After some trial and error I configured BibLaTeX so the references
+and citations looked sensible. I thought I would go through the
+customisations I made and explain what effect they have.
+
+First, here is my basic .tex file, which includes some necessary
+preamble material and then prints some references:
+
+    \documentclass{article}
+
+    \usepackage[natbib,
+        backend=biber
+        ]{biblatex}
+    \addbibresource{ref.bib}
+
+    \begin{document}
+
+    Ref. 1: \citep{Jost2007}
+
+    Ref. 2: \citep{Fick2017}
+
+    Ref. 3: \citep{Dinerstein2017}
+
+    Ref. 4: \citep{Adole2018a}
+
+    Ref. 5: \citep{Adole2018b}
+
+    Ref. 6: \citep{VIPPHEN}
+
+    Ref. 7: \citep{Fake2021}
+
+    \printbibliography{}
+
+    \end{document}
+
+I’m using natbib syntax to write the citations, and biber as a
+bibliography parsing engine.
+
+ref.bib looks like this:
+
+    " One author article
+    @article{Jost2007,
+      author = {Jost, L.},
+      title = {Partitioning diversity into independent alpha and beta components},
+      year = 2007,
+      journal = {Ecology},
+      volume = {88},
+      number = {10},
+      pages = {2427--2439},
+      DOI = {10.1890/06-1736.1}
+    }
+
+    " Two author article
+    @article{Fick2017,
+      author = {Fick, S. E. and Hijmans, R. J.},
+      title = {WorldClim 2: {New} 1‐km spatial resolution climate surfaces for global land areas},
+      year = 2017,
+      journal = {International Journal of Climatology},
+      volume = {37},
+      number = {12},
+      pages = {4302--4315},
+      DOI = {10.1002/joc.5086}
+    }
+
+    " Two articles with same authors:
+    " The first
+    @article{Adole2018a,
+      doi = {10.1111/gcb.14310},
+      year = 2018,
+      publisher = {Wiley},
+      volume = {24},
+      number = {9},
+      pages = {4054--4068},
+      author = {Adole, T. and Dash, J. and Atkinson, P. M.},
+      title = {Large-scale prerain vegetation green-up across Africa},
+      journal = {Global Change Biology}
+    }
+
+    " The second
+    @article{Adole2018b,
+      doi = {10.1016/j.apgeog.2017.12.006},
+      year = 2018,
+      publisher = {Elsevier {BV}},
+      volume = {90},
+      pages = {187--199},
+      author = {Adole, T. and Dash, J. and Atkinson, P. M.},
+      title = {Characterising the land surface phenology of Africa using 500~m {MODIS} {EVI}},
+      journal = {Applied Geography}
+    }
+
+    " Long author list
+    @article{Dinerstein2017,
+      doi = {10.1093/biosci/bix014},
+      year = 2017,
+      publisher = {Oxford University Press ({OUP})},
+      volume = {67},
+      number = {6},
+      pages = {534--545},
+      author = {Dinerstein, E. and Olson, D. and Joshi, A. and Vynne, C. and Burgess, N. D. and Wikramanayake, E. and Hahn, N. and Palminteri, S. and Hedao, P. and Noss, R. and Hansen, M. and Locke, H. and Ellis, E. C. and Jones, B. and Barber, C. V. and Hayes, R. and Kormos, C. and Martin, V. and Crist, E. and Sechrest, W. and Price, L. and Baillie, J. E. M. and Weeden, D. and Suckling, K. and Davis, C. and Sizer, N. and Moore, R. and Thau, D. and Birch, T. and Potapov, P. and Turubanova, S. and Tyukavina, A. and de Souza, N. and Pintea, L. and Brito, J. C. and Llewellyn, O. A. and Miller, A. G. and Patzelt, A. and Ghazanfar, S. A. and Timberlake, J. and Kl\"{o}ser, H. and Shennan-Farp\'{o}n, Y. and Kindt, R. and Lilles{\o}, J. B. and van Breugel, P. and Graudal, L. and Voge, M. and Al-Shammari, K. F. and Saleem, M.},
+      title = {An ecoregion-based approach to protecting half the terrestrial realm},
+      journal = {{BioScience}}
+    }
+
+    " Book
+    @book{Legendre1998,
+      author = {Pierre Legendre, and Louis Legendre},
+      title = {Numerical Ecology, 2nd edition},
+      year = 1998,
+      publisher = {Elsevier},
+      address = {Amsterdam, Netherlands}
+    }
+
+    " Dataset
+    @dataset{VIPPHEN,
+      author = {Didan, L. and Barreto, A.},
+      title = {{NASA MEaSUREs Vegetation Index and Phenology (VIP) Phenology EVI2 Yearly Global 0.05Deg CMG [Data set]}},
+      year = {2016},
+      doi = {10.5067/MEaSUREs/VIP/VIPPHEN_EVI2.004},
+      publisher = {NASA EOSDIS Land Processes DAAC},
+      urldate = {2020-08-05}
+    }
+
+    " Hypothetical reference with a lot of non-standard names
+    @article{Fake2021,
+      year = 2021,
+      volume = {656},
+      number = {2},
+      pages = {1--5},
+      author = {Godlee, E. L. G. and de Olson, D. and van den Joshi, A. and der Vynne, C. and Den Burgess, N. D. and MacNail, E. and Shennan-Farp\'{o}n, Y. and Mute, S.-P.},
+      title = {This is a fake reference},
+      journal = {{Nature}}
+    }
+
+All these references were chosen to highlight some of the diversity
+of bibliographic entries I have experienced.
+
+The basic document produces a file like this:
+
+[Basic LaTeX document]
+
+
+The first thing to change is the basic reference style. Currently
+the references are numbered, but I prefer the author-year style, so
+I alter the biblatex options to look like this:
+
+    \usepackage[natbib,
+        backend=biber,
+        style=authoryear
+        ]{biblatex}
+
+which produces this document:
+
+[Author-year style references]
+
+
+There are a few issues that still need to be solved, so I’ll go
+through them one by one.
+
+Firstly, the number of names reported in both the citations and the
+reference list is not how I would like it. For example, Adole et
+al. (2018a) has three authors in the citation, but I would prefer
+one author then et al. if there are more than two authors. Also,
+Dinerstein et al. (2017) only has one author then et al. in the
+reference list, but I want to list up to 10 authors then et al., so
+I alter the biblatex options once more:
+
+    \usepackage[natbib,
+        backend=biber,
+        style=authoryear,
+        maxcitenames=2, 
+        mincitenames=1, 
+        minbibnames=10, 
+        maxbibnames=10
+        ]{biblatex}
+
+This allows up to two names in the citations before et al., and if
+et al. is used, only the first author name is given. Also a maximum
+of 10 names is displayed in the reference list, but if there are
+fewer than 10 then all names are displayed.
+
+[Changing the number of authors]
+
+
+Next, BibLaTeX has decided that if two papers have the same author
+list, that the second paper can omit the author list in place of a
+dash. I don’t like this, so I change the options again:
+
+    \usepackage[natbib,
+        backend=biber,
+        style=authoryear,
+        maxcitenames=2, 
+        mincitenames=1, 
+        minbibnames=10, 
+        maxbibnames=10,
+        uniquename=false, 
+        uniquelist=false,
+        dashed=false
+        ]{biblatex}
+
+This prints the full author list for every repeat.
+
+[Always printing the full author list, even when repeated]
+
+
+Next, the Legendre and Legendre (1998) reference has provided the
+full first names for each author in the .bib file. This is valid
+BibTeX syntax, but BibLaTeX then defaults to printing those first
+names in the reference rather than the initials, which looks messy
+when using a mix of initials and full names. So I configure BibLaTeX
+to always use initials.
+
+    \usepackage[natbib,
+        backend=biber,
+        style=authoryear,
+        maxcitenames=2, 
+        mincitenames=1, 
+        minbibnames=10, 
+        maxbibnames=10,
+        uniquename=false, 
+        uniquelist=false,
+        dashed=false,
+        giveninits=true
+        ]{biblatex}
+
+[Always use initials, even when full names provided]
+
+
+Finally, and this might be a bit nit-picky, I would prefer to use an
+ampersand rather than “and” when listing the final author name, both
+in the citations and the reference list, so I add this line to the
+document preamble:
+
+    \renewcommand*\finalnamedelim{\addspace\&\space}
+
+[Use an ampersand for the final author]
+
