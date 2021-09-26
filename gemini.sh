@@ -3,10 +3,8 @@
 # Create output directories
 mkdir -p gemini 
 mkdir -p gemini/posts
-mkdir -p gemini/recipes
 
 rm gemini/posts/*
-rm gemini/recipes/*
 
 # Create list of post file paths
 allposts=(~/git_proj/johngodlee.github.io/_posts/*.md)
@@ -85,52 +83,5 @@ for i in $rev_all_base; do
 	printf "=> $i $line\n" >> gemini/posts/index.gmi
 done
 
-# Create index for recipes with header content
-touch gemini/recipes/index.gmi
-cat gemini_recipes_head > gemini/recipes/index.gmi
-
-# Convert recipes to plain text
-for i in ~/git_proj/recipes/*/*.md; do
-	# Get name of file name recipe, without extension
-	name=$(basename "$i" | cut -f 1 -d '.')
-
-	# Convert recipe from markdown to gemini
-	md2gemini -p -l paragraph -f $i | sed "s///g" > gemini/recipes/$name.gmi
-done
-
-rm gemini/recipes/README.gmi
-
-# Get name of directory recipe resided in for a header in index.gmi 
-dir_list=$(find ~/git_proj/recipes -type d -depth 1 | sed -e '/\.git/d' | sed 's|^\./||')
-
-# Add links for recipes to recipes/geminimap
-for i in $dir_list; do
-	
-	# Insert directory header into recipes/index.gmi
-	dir_title=$(basename $i | sed 's/_/ /g' | sed 's/.*/\u&/')	
-	printf "\n## $dir_title\n\n" >> gemini/recipes/index.gmi
-	
-	# Get list of all recipe files
-	md_list=$(find $i/* -type f | sed '/README.md/d')
-
-	# Add links for recipes to recipes/geminimap
-	for j in $md_list; do
-		md_contents_title=$(head -n 1 $j | sed 's/# //g')
-		txt_file_loc=$(basename $j | cut -f 1 -d '.' | sed 's/$/.gmi/')
-
-		printf "=> $txt_file_loc $md_contents_title\n" >> gemini/recipes/index.gmi
-	done
-done
-
-# CV
-pandoc -f markdown -t plain -o gemini/cv.txt ~/git_proj/johngodlee.github.io/cv.md
-
-# Link CV to gophermap
-cv="# John L. Godlee - Curriculum Vitae"
-
-sed -i -e "1i$cv\n\n" gemini/cv.txt
-sed -i -e '4,5d' gemini/cv.txt
-
-scp gemini/index.gmi contact.gmi gemini/cv.txt johngodlee.asc johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
+scp gemini/index.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
 scp -r gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
-scp -r gemini/recipes johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
