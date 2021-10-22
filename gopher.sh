@@ -7,7 +7,7 @@ mkdir -p gopher/posts
 rm gopher/posts/*
 
 # Create list of post file paths
-allposts=($HOME/git_proj/johngodlee.github.io/_posts/*.md)
+allposts=($HOME/git_proj/johngodlee_website/content/posts/2*.md)
 
 # Only include files which aren't in the future
 files=()
@@ -24,21 +24,26 @@ for i in ${files[@]}; do
 	# Get file name of post, without extension
 	name=$(basename "$i" | cut -f 1 -d '.')
 
+	echo $name
+
 	# Convert post from markdown to plain text
-	pandoc --from markdown --to plain --columns=68 --reference-links --reference-location=block -o gopher/posts/$name.txt $i
+	pandoc --from markdown-smart --to plain --columns=9999 --reference-links --reference-location=block -o gopher/posts/${name}_wrap.txt $i
+
+	# Sanitize image links 
+	sed -i 's|{{<\simg\slink="\([^"]*\)".*alt="\([^"]*\)".*|  ![\2](https://johngodlee.xyz\1)|g' gopher/posts/${name}_wrap.txt
     
-    # Sanitize plain text
-	sed -i 's/\]\[\]/]/g' gopher/posts/$name.txt
-	sed -i '/%7B%7B%20site\.baseurl%20%7D%7D\/img/d' gopher/posts/$name.txt
-	sed -i 's|\%7B\%7B\%20site\.baseurl\%20\%7D\%7D|https://johngodlee.github.io|g' gopher/posts/$name.txt
-	sed -i 's/^\[\[.*\]\]/  {IMAGE}/g' gopher/posts/$name.txt
+    # Sanitize file links 
+	sed -i 's|:\s/files\(.*\)|(https://johngodlee.xyz/files\1)|g' gopher/posts/${name}_wrap.txt
 
 	# Insert title in post
 	title=$(awk 'NR==3' $i | sed 's/"//g' | sed 's/title:\s*//g')
 	date=$(awk 'NR==4' $i | sed 's/date:\s*//g')
 	title_lo=$(printf '=%.0s' {1..68})
 	author="John L. Godlee"
-	sed -i "1iTITLE: $title\nDATE: $date\nAUTHOR: $author\n$title_lo\n\n" "gopher/posts/$name.txt"
+	sed -i "1iTITLE: $title\nDATE: $date\nAUTHOR: $author\n$title_lo\n\n" "gopher/posts/${name}_wrap.txt"
+
+	fold -sw 68 < gopher/posts/${name}_wrap.txt > gopher/posts/${name}.txt
+	rm gopher/posts/${name}_wrap.txt
 done
 
 # Create root gophermap and fill with header content 

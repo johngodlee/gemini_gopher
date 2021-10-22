@@ -7,7 +7,7 @@ mkdir -p gemini/posts
 rm gemini/posts/*
 
 # Create list of post file paths
-allposts=($HOME/git_proj/johngodlee.github.io/_posts/*.md)
+allposts=($HOME/git_proj/johngodlee_website/content/posts/2*.md)
 
 # Only include files which aren't in the future
 files=()
@@ -19,17 +19,21 @@ for i in "${allposts[@]}"; do
 	fi
 done
 
+# Convert blog posts to plain text
 for i in ${files[@]}; do
-	# Get file name of post
+	# Get file name of post, without extension
 	name=$(basename "$i" | cut -f 1 -d '.')
+
+	echo $name
 
 	# Convert post from markdown to plain text
 	md2gemini -p -l paragraph -f $i | sed "s///g" > gemini/posts/$name.gmi
 
-	# Sanitize image and file links 
-	sed -i 's/^\[\([^]].*\)\].*/\1/g' gemini/posts/$name.gmi
-	sed -i 's/^\!\[\([^]].*\)\](\([^]].*\)).*/=> \2 \1/g' gemini/posts/$name.gmi
-	sed -i 's/{{\ssite\.baseurl\s}}/https:\/\/johngodlee.github.io/g' gemini/posts/$name.gmi
+	# Sanitize image links 
+	sed -i 's|{{<\simg\slink="\([^"]*\)".*alt="\([^"]*\)".*|=> https://johngodlee.xyz/\1 \2|g' gemini/posts/$name.gmi 
+
+	# Sanitize file links
+	sed -i 's|^=>\s/files|=> https://johngodlee.xyz/files|g' gemini/posts/$name.gmi
 
 	# Sanitize code
 	sed -i 's/^```\([^]].*\)/``` \1/g' gemini/posts/$name.gmi
