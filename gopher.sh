@@ -4,8 +4,6 @@
 mkdir -p gopher 
 mkdir -p gopher/posts
 
-rm gopher/posts/*
-
 # Create list of post file paths
 allposts=($HOME/git_proj/johngodlee_website/content/posts/2*.md)
 
@@ -24,26 +22,43 @@ for i in ${files[@]}; do
 	# Get file name of post, without extension
 	name=$(basename "$i" | cut -f 1 -d '.')
 
-	echo $name
+	outfile="gopher/posts/${name}.txt"
 
-	# Convert post from markdown to plain text
-	pandoc --from markdown-smart --to plain --columns=9999 --reference-links --reference-location=block -o gopher/posts/${name}_wrap.txt $i
+	# Only process newer files
+	intime=$(date -r $i +%s)
 
-	# Sanitize image links 
-	sed -i 's|{{<\simg\slink="\([^"]*\)".*alt="\([^"]*\)".*|  ![\2](https://johngodlee.xyz\1)|g' gopher/posts/${name}_wrap.txt
-    
-    # Sanitize file links 
-	sed -i 's|:\s/files\(.*\)|(https://johngodlee.xyz/files\1)|g' gopher/posts/${name}_wrap.txt
+	if [ -f "$outfile" ]; then
+		outtime=$(date -r $outfile +%s)
+	else 
+		outtime="0"
+	fi
 
-	# Insert title in post
-	title=$(awk 'NR==3' $i | sed 's/"//g' | sed 's/title:\s*//g')
-	date=$(awk 'NR==4' $i | sed 's/date:\s*//g')
-	title_lo=$(printf '=%.0s' {1..68})
-	author="John L. Godlee"
-	sed -i "1iTITLE: $title\nDATE: $date\nAUTHOR: $author\n$title_lo\n\n" "gopher/posts/${name}_wrap.txt"
+	if [ "$outtime" -lt "$intime" ]; then
+		echo $name
 
-	fold -sw 68 < gopher/posts/${name}_wrap.txt > gopher/posts/${name}.txt
-	rm gopher/posts/${name}_wrap.txt
+		# Convert post from markdown to plain text
+		pandoc --from markdown-smart --to plain --columns=9999 --reference-links --reference-location=block -o gopher/posts/${name}_wrap.txt $i
+
+		# Sanitize image links 
+		sed -i 's|{{<\simg\slink="\([^"]*\)".*alt="\([^"]*\)".*|  ![\2](https://johngodlee.xyz\1)|g' gopher/posts/${name}_wrap.txt
+    	
+    	# Sanitize file links 
+		sed -i 's|:\s/files\(.*\)|(https://johngodlee.xyz/files\1)|g' gopher/posts/${name}_wrap.txt
+
+		# Insert title in post
+		title=$(awk 'NR==3' $i | sed 's/"//g' | sed 's/title:\s*//g')
+		date=$(awk 'NR==4' $i | sed 's/date:\s*//g')
+		title_lo=$(printf '=%.0s' {1..68})
+		author="John L. Godlee"
+		sed -i "1iTITLE: $title\nDATE: $date\nAUTHOR: $author\n$title_lo\n\n" "gopher/posts/${name}_wrap.txt"
+
+		fold -sw 68 < gopher/posts/${name}_wrap.txt > gopher/posts/${name}.txt
+		rm gopher/posts/${name}_wrap.txt
+
+		sed -i "s///g" gopher/posts/${name}.txt
+
+		chmod 644 gopher/posts/${name}.txt
+	fi
 done
 
 # Create root gophermap and fill with header content 
@@ -51,7 +66,6 @@ touch gopher/gophermap
 cat gopher_head > gopher/gophermap
 
 # Remove bad line endings
-sed -i "s///g" gopher/posts/*.txt
 
 # Create array of all posts
 all=(gopher/posts/*.txt)
@@ -93,9 +107,7 @@ for i in $rev_all_base; do
 done
 
 # Set file permissions, world read, nonexecutable
-find gopher/posts/ -type f -print0 | xargs -0 chmod 644
 find . -name 'gophermap' -print0 | xargs -0 chmod 644
 find . -type d -print0 | xargs -0 chmod 755
 
-scp gopher/gophermap johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
-scp -r gopher/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
+rsync -avh --stats gopher/gophermap gopher/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher

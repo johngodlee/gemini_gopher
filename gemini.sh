@@ -4,8 +4,6 @@
 mkdir -p gemini 
 mkdir -p gemini/posts
 
-rm gemini/posts/*
-
 # Create list of post file paths
 allposts=($HOME/git_proj/johngodlee_website/content/posts/2*.md)
 
@@ -24,25 +22,38 @@ for i in ${files[@]}; do
 	# Get file name of post, without extension
 	name=$(basename "$i" | cut -f 1 -d '.')
 
-	echo $name
+	outfile="gemini/posts/$name.gmi"
 
-	# Convert post from markdown to plain text
-	md2gemini -p -l paragraph -f $i | sed "s///g" > gemini/posts/$name.gmi
+	# Only process newer files
+	intime=$(date -r $i +%s)
 
-	# Sanitize image links 
-	sed -i 's|{{<\simg\slink="\([^"]*\)".*alt="\([^"]*\)".*|=> https://johngodlee.xyz/\1 \2|g' gemini/posts/$name.gmi 
+	if [ -f "$outfile" ]; then
+		outtime=$(date -r $outfile +%s)
+	else 
+		outtime="0"
+	fi
+	
+	if [ "$outtime" -lt "$intime" ]; then
+		echo $name
 
-	# Sanitize file links
-	sed -i 's|^=>\s/files|=> https://johngodlee.xyz/files|g' gemini/posts/$name.gmi
+		# Convert post from markdown to plain text
+		md2gemini -p -l paragraph -f $i | sed "s///g" > "$outfile"
 
-	# Sanitize code
-	sed -i 's/^```\([^]].*\)/``` \1/g' gemini/posts/$name.gmi
+		# Sanitize image links 
+		sed -i 's|{{<\simg\slink="\([^"]*\)".*alt="\([^"]*\)".*|=> https://johngodlee.xyz/\1 \2|g' "$outfile" 
 
-	# Insert title in post
-	title=$(awk 'NR==3' $i | sed 's/"//g' | sed 's/title:\s*//g')
-	date=$(awk 'NR==4' $i | sed 's/date:\s*//g')
-	author="John L. Godlee"
-	sed -i "1i# $title\n\nDATE: $date\nAUTHOR: $author\n\n" "gemini/posts/$name.gmi"
+		# Sanitize file links
+		sed -i 's|^=>\s/files|=> https://johngodlee.xyz/files|g' "$outfile"
+
+		# Sanitize code
+		sed -i 's/^```\([^]].*\)/``` \1/g' "$outfile"
+
+		# Insert title in post
+		title=$(awk 'NR==3' $i | sed 's/"//g' | sed 's/title:\s*//g')
+		date=$(awk 'NR==4' $i | sed 's/date:\s*//g')
+		author="John L. Godlee"
+		sed -i "1i# $title\n\nDATE: $date\nAUTHOR: $author\n\n" ""$outfile""
+	fi
 done
     
 # Create index.gmi and fill
@@ -52,6 +63,7 @@ cat gemini_head > gemini/index.gmi
 
 # Create array of posts
 all=(gemini/posts/*.gmi)
+unset 'all[${#all[@]}-1]'
 
 # Reverse order of posts array
 for (( i=${#all[@]}-1; i>=0; i-- )); do 
@@ -87,5 +99,4 @@ for i in $rev_all_base; do
 	printf "=> $i $line\n" >> gemini/posts/index.gmi
 done
 
-scp gemini/index.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
-scp -r gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
+rsync -avh --stats gemini/index.gmi gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
