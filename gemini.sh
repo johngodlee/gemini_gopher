@@ -99,4 +99,6 @@ for i in $rev_all_base; do
 	printf "=> $i $line\n" >> gemini/posts/index.gmi
 done
 
-rsync -avh --stats gemini/index.gmi gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
+rsync -avh --stats gemini/index.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
+rsync -avh --stats gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
+ 
