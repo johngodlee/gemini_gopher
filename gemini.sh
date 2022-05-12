@@ -99,6 +99,37 @@ for i in $rev_all_base; do
 	printf "=> $i $line\n" >> gemini/posts/index.gmi
 done
 
+# Prepare RSS feed
+xmlstarlet ed -d "/rss/channel/item/description" \
+	-d "/rss/channel/item/guid" \
+	-d "/rss/channel/generator" \
+	-d "/rss/channel/atom:link" \
+	-d "/rss/channel/description" \
+	-d "/@standalone" \
+	-u "/rss/channel/link" -v "" \
+	-i "/rss/channel/link" -t "attr" -n "rel" -v "self" \
+	-i "/rss/channel/link[@rel='self']" -t "attr" -n "type" -v "application/atom+xml" \
+	-i "/rss/channel/link[@rel='self']" -t "attr" -n "href" -v "gemini://republic.circumlunar.space/~johngodlee/posts/feed.xml" \
+	-a "/rss/channel/link" -t "elem" -n "linktmp" -v "" \
+	-i "/rss/channel/linktmp" -t "attr" -n "rel" -v "alternate" \
+	-i "/rss/channel/linktmp" -t "attr" -n "type" -v "text/gemini" \
+	-i "/rss/channel/linktmp" -t "attr" -n "href" -v "gemini://republic.circumlunar.space/~johngodlee/" \
+	-r "/rss/channel/linktmp" -v "link" \
+	-a "/rss/channel/title" -t "elem" -n "author" -v "John L. Godlee" \
+	-a "/rss/channel/author" -t "elem" -n "id" -v "gemini://republic.circumlunar.space/~johngodlee/" \
+	-r "/rss/channel/lastBuildDate" -v "updated" \
+	-r "/rss/channel/item/pubDate" -v "updated" \
+	-r "/rss/channel/item" -v "entry" \
+	-m "/rss/channel/*" "/rss" \
+	-d "/rss/channel" \
+	-r "/rss" -v "feed" \
+	$HOME/git_proj/johngodlee_website/johngodlee.github.io/index.xml |\
+	sed 's/xmlns:atom/xmlns/g' |\
+	sed 's|http://johngodlee.xyz\(.*\)/</link>|gemini://republic.circumlunar.space/~johngodlee\1.gmi</link>|g' |\
+	sed 's|<link>\(.*\)</link>|<link href="\1" />\n    <id>\1</id>|g' >\
+	gemini/posts/feed.xml
+
 rsync -avh --stats gemini/index.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
 rsync -avh --stats gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
  
+python3 -c "import ignition; response = ignition.request('//warmedal.se/~antenna/submit?gemini%3A%2F%2Frepublic.circumlunar.space%2F~johngodlee%2Fposts%2Ffeed.xml')"
