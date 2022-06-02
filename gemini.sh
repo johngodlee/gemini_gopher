@@ -99,6 +99,10 @@ for i in $rev_all_base; do
 	printf "=> $i $line\n" >> gemini/posts/index.gmi
 done
 
+# Copy other files
+cp bookmarks.gmi gemini/
+cp contact.gmi gemini/
+
 # Prepare RSS feed
 xmlstarlet ed -d "/rss/channel/item/description" \
 	-d "/rss/channel/item/guid" \
@@ -129,7 +133,6 @@ xmlstarlet ed -d "/rss/channel/item/description" \
 	sed 's|<link>\(.*\)</link>|<link href="\1" />\n    <id>\1</id>|g' >\
 	gemini/posts/feed.xml
 
-rsync -avh --stats gemini/index.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
-rsync -avh --stats gemini/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
+rsync -avh --stats gemini/posts gemini/index.gmi gemini/bookmarks.gmi gemini/contact.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
  
 python3 -c "import ignition; response = ignition.request('//warmedal.se/~antenna/submit?gemini%3A%2F%2Frepublic.circumlunar.space%2F~johngodlee%2Fposts%2Ffeed.xml')"

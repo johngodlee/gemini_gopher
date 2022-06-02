@@ -106,8 +106,11 @@ for i in $rev_all_base; do
 	printf "0$linecut\t$i\n" >> gopher/posts/gophermap
 done
 
+# Copy other files
+cp contact.txt gopher/
+
 # Set file permissions, world read, nonexecutable
 find . -name 'gophermap' -print0 | xargs -0 chmod 644
 find . -type d -print0 | xargs -0 chmod 755
 
-rsync -avh --stats gopher/gophermap gopher/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
+rsync -avh --stats gopher/contact.txt gopher/gophermap gopher/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
