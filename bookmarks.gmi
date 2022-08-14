@@ -15,6 +15,8 @@
 => gemini://gemini.circumlunar.space/users/hundredrabbits/ Hundred rabbits
 => gemini://thegonz.net:3965/ Internet radio
 => gemini://geminispace.info/ Gemini info
+=> gemini://smol.pub/feed SmolPub
+=> gemini://breadpunk.club/ Breadpunk
 
 ## Gopher 
 
