@@ -3,30 +3,36 @@
 ## Gemini
 
 => gemini://republic.circumlunar.space/users/johngodlee John L. Godlee
-=> gemini://republic.circumlunar.space:1965/ Mare Serenitatis Circumlunar Corporate Republic
-=> gemini://rawtext.club:1965/~sloum/spacewalk.gmi Spacewalk aggregator
+=> gemini://republic.circumlunar.space/ Mare Serenitatis Circumlunar Corporate Republic
+=> gemini://rawtext.club/~sloum/spacewalk.gmi Spacewalk aggregator
 => gemini://warmedal.se/~antenna/ Antenna aggregator
-=> gemini://medusae.space:1965/ Medusae directory
+=> gemini://medusae.space/ Medusae directory
 => gemini://skyjake.fi/~Cosmos/index.gmi Cosmos super aggregator
-=> gemini://gemini.circumlunar.space:1965/ Project Gemini 
+=> gemini://gemini.circumlunar.space/ Project Gemini 
 => gemini://kwiecien.us/gemcast/ Kwiecien Gemcast
-=> gemini://konpeito.media:1965/ Konpeito mixtape
+=> gemini://konpeito.media/ Konpeito mixtape
 => gemini://skyjake.fi/lagrange/ Lagrange Gemini and Gopher browser
 => gemini://gemini.circumlunar.space/users/hundredrabbits/ Hundred rabbits
-=> gemini://thegonz.net:3965/ Internet radio
 => gemini://geminispace.info/ Gemini info
 => gemini://smol.pub/feed SmolPub
 => gemini://breadpunk.club/ Breadpunk
+=> gemini://astrobotany.mozz.us/ Astrobotany
+=> gemini://gemi.dev/cgi-bin/chilly.cgi Chilly weather
+=> gemini://gemi.dev/cgi-bin/wp.cgi Wikipedia
+=> gemini://station.martinrue.com/ Station
+=> gemini://midnight.pub/ Midnight Pub
+=> gemini://gemini.cyberbot.space/smolzine/ Smolzine
+=> gemini://discogem.gmi.bacardi55.io DiscoGem
 
 ## Gopher 
 
-=> gopher://republic.circumlunar.space:70/1/~johngodlee John L. Godlee
-=> gopher://sdf.org/1/users/julienxx/Lobste.rs Lobste.rs
+=> gopher://republic.circumlunar.space/1/~johngodlee John L. Godlee
+=> gopher://typed-hole.org/1/lobsters Lobste.rs
 => gopher://hngopher.com/1 Hacker news
 => gopher://republic.circumlunar.space/ Mare Serenitatis Circumlunar Corporate Republic
 => gopher://sdf.org SDF
 => gopher://bitreich.org/1/lawn Gopher Lawn
-=> gopher://i-logout.cz:70/1/bongusta Bongusta aggregator
+=> gopher://i-logout.cz/1/bongusta Bongusta aggregator
 => gopher://gopher.black/1/moku-pona Moku-pona aggregator
 => gopher://tildeverse.org Tildeverse
 => gopher://cosmic.voyage/1/ Cosmic Voyage
