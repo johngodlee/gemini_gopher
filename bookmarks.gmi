@@ -23,6 +23,7 @@
 => gemini://midnight.pub/ Midnight Pub
 => gemini://gemini.cyberbot.space/smolzine/ Smolzine
 => gemini://discogem.gmi.bacardi55.io DiscoGem
+=> gemini://geddit.glv.one Geddit
 
 ## Gopher 
 

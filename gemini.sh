@@ -9,9 +9,9 @@ allposts=($HOME/git_proj/johngodlee_website/content/posts/2*.md)
 
 # Only include files which aren't in the future
 files=()
+today=$(date +%s)
 for i in "${allposts[@]}"; do
 	ts=$(basename "$i" | cut -d'-' -f1-3 | date -f - +%s)
-	today=$(date +%s)
 	if [ "$ts" -le "$today" ]; then
     	files+=("$i")
 	fi
