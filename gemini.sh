@@ -134,5 +134,3 @@ xmlstarlet ed -d "/rss/channel/item/description" \
 	gemini/posts/feed.xml
 
 rsync -avh --stats gemini/posts gemini/index.gmi gemini/bookmarks.gmi gemini/contact.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini
- 
-python3 -c "import ignition; response = ignition.request('//warmedal.se/~antenna/submit?gemini%3A%2F%2Frepublic.circumlunar.space%2F~johngodlee%2Fposts%2Ffeed.xml')"
