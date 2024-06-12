@@ -13,7 +13,7 @@
 => gemini://konpeito.media/ Konpeito mixtape
 => gemini://skyjake.fi/lagrange/ Lagrange Gemini and Gopher browser
 => gemini://gemini.circumlunar.space/users/hundredrabbits/ Hundred rabbits
-=> gemini://geminispace.info/ Gemini info
+=> gemini://geminispace.info/ Geminispace search engine 
 => gemini://smol.pub/feed SmolPub
 => gemini://breadpunk.club/ Breadpunk
 => gemini://astrobotany.mozz.us/ Astrobotany
@@ -37,4 +37,6 @@
 => gopher://gopher.black/1/moku-pona Moku-pona aggregator
 => gopher://tildeverse.org Tildeverse
 => gopher://cosmic.voyage/1/ Cosmic Voyage
+=> gopher://gopher.floodgap.com/1/v2 Veronica search engine 
+=> gopher://embryonic.church/ Embryonic Church
 
