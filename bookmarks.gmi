@@ -24,6 +24,9 @@
 => gemini://gemini.cyberbot.space/smolzine/ Smolzine
 => gemini://discogem.gmi.bacardi55.io DiscoGem
 => gemini://geddit.glv.one Geddit
+=> gemini://gemini.ctrl-c.club:1965/~lettuce/ Lettuce
+=> gemini://gemi.dev:1965/cgi-bin/wp.cgi/ Gemipedia
+=> gemini://gemi.dev:1965/cgi-bin/waffle.cgi/ NewsWaffle
 
 ## Gopher 
 

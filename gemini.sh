@@ -133,4 +133,7 @@ xmlstarlet ed -d "/rss/channel/item/description" \
 	sed 's|<link>\(.*\)</link>|<link href="\1" />\n    <id>\1</id>|g' >\
 	gemini/posts/feed.xml
 
+find "gemini" -type f -print0 | xargs -0 chmod 644
+find "gemini" -type d -name "posts" -print0 | xargs -0 chmod 755
+
 rsync -avh --stats gemini/posts gemini/index.gmi gemini/bookmarks.gmi gemini/contact.gmi johngodlee@r.circumlunar.space:/usr/home/johngodlee/gemini

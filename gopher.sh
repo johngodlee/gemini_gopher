@@ -82,7 +82,7 @@ recent="${rev_all[@]:0:10}"
 for i in $recent; do
 	link=$(echo $i | sed 's/^gopher\///')
 	title=$(head -n 1 $i | sed 's/^TITLE:\s\+//g')
-	date=$(head -n 2 $i | sed -n 2p | sed 's/^DATE:\s\+//g')
+	date=$(grep "^DATE:" $i | sed 's/^DATE:\s\+//g')
 	line="${date} - ${title}"
 	linecut=$(echo ${line} | cut -c 1-68)
 	printf "0$linecut\t$link\n" >> gopher/gophermap
@@ -100,7 +100,7 @@ rev_all_base=$(basename -a ${rev_all[@]})
 
 for i in $rev_all_base; do
 	title=$(head -n 1 gopher/posts/$i | sed 's/^TITLE:\s\+//g')
-	date=$(head -n 2 gopher/posts/$i | sed -n 2p | sed 's/^DATE:\s\+//g')
+	date=$(grep "^DATE:" $i | sed 's/^DATE:\s\+//g')
 	line="${date} - ${title}"
 	linecut=$(echo ${line} | cut -c 1-68)
 	printf "0$linecut\t$i\n" >> gopher/posts/gophermap
@@ -110,7 +110,7 @@ done
 cp contact.txt gopher/
 
 # Set file permissions, world read, nonexecutable
-find . -name 'gophermap' -print0 | xargs -0 chmod 644
-find . -type d -print0 | xargs -0 chmod 755
+find "gopher" -type f -print0 | xargs -0 chmod 644
+find "gopher" -type d -name "posts" -print0 | xargs -0 chmod 755
 
 rsync -avh --stats gopher/contact.txt gopher/gophermap gopher/posts johngodlee@r.circumlunar.space:/usr/home/johngodlee/gopher
