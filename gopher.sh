@@ -5,7 +5,7 @@ mkdir -p gopher
 mkdir -p gopher/posts
 
 # Create list of post file paths
-allposts=($HOME/git_proj/johngodlee_website/content/posts/2*.md)
+allposts=($HOME/git_proj/johngodlee_website/content/posts/**/2*.md)
 
 # Only include files which aren't in the future
 files=()
